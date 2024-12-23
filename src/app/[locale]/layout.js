@@ -1,15 +1,18 @@
 import {Inter} from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import {ThemeProvider} from "@/components/themes-provider"
 import {AppSidebar} from "@/components/AppSidebar";
 import {SidebarInset, SidebarProvider} from "@/components/ui/sidebar";
 import {cookies} from "next/headers";
 import {Toaster} from "@/components/ui/toaster";
+import {routing} from '@/i18n/routing.ts';
+import {NextIntlClientProvider} from "next-intl";
+import {getMessages} from "next-intl/server";
+import {notFound} from "next/navigation";
 
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata = {
-    title: "Home ⋅ Alejandro Griffith",
     description: "My personal portfolio",
     icons: {
         icon: [
@@ -24,26 +27,35 @@ export const metadata = {
 };
 
 
-export default async function RootLayout({children}) {
+export default async function LocaleLayout({children, params}) {
     const cookieStore = await cookies()
     const defaultOpen = cookieStore.get("sidebar:state")?.value === "true"
+    const {locale} = await params;
+
+    if (!routing.locales.includes(locale)) {
+        notFound();
+    }
+
+    const messages = await getMessages();
 
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
         <body className={inter.className} suppressHydrationWarning>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <SidebarProvider defaultOpen={defaultOpen}>
-                <AppSidebar/>
-                <SidebarInset>
-                    {children}<Toaster />
-                </SidebarInset>
-            </SidebarProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+            >
+                <SidebarProvider defaultOpen={defaultOpen}>
+                    <AppSidebar lang={locale}/>
+                    <SidebarInset>
+                        {children}<Toaster/>
+                    </SidebarInset>
+                </SidebarProvider>
+            </ThemeProvider>
+        </NextIntlClientProvider>
         </body>
         </html>
     );

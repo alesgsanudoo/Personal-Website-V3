@@ -1,0 +1,267 @@
+{
+  "AppSidebar": {
+    "explore": "Explore",
+    "about-me": "About Me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact-me": "Contact Me",
+    "resources": "Resources",
+    "me-and-myself": "Me & Myself",
+    "appearance": "Appearance",
+    "dark": "Dark",
+    "light": "Light",
+    "languages": "Languages"
+  },
+  "AboutPage": {
+    "metadata": "About Me ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "About me",
+    "section-title": "About Me",
+    "content": {
+      "paragraph1": "Little did I know, when I touched my first laptop, that I would become passionate about computer science and project development. My journey began with creating Minecraft servers, developing addons, and designing websites and shops for these servers. After successfully running several servers with more than 10,000 players, I decided to go deeper into computer science.",
+      "paragraph2": "Today, I have built several private, public, and class projects, some of which have generated income. Currently, I am focused on creating side projects to showcase my skills, particularly using C++, a language I am eager to learn more about and thoroughly enjoy programming in.",
+      "paragraph3": "When I am not coding, I enjoy playing any type of sports or games, working out, watching series, reading, and spending time with friends and family.",
+      "paragraph4": "Feel free to reach out; I love meeting new people and engaging in conversations. I hope you liked visiting my portfolio."
+    },
+    "interest": {
+      "title": "Programming Interests",
+      "description": "Things I'm passionate about.",
+      "list": {
+        "systems": "Systems",
+        "backend": "Backend",
+        "database": "Database",
+        "cloud": "Cloud",
+        "low-level": "Low-level",
+        "object-oriented": "Object-oriented"
+      }
+    },
+    "languages": {
+      "title": "Languages",
+      "description": "The ones I use to connect with the world.",
+      "list": {
+        "english": {
+          "language": "English",
+          "level": "Native"
+        },
+        "spanish": {
+          "language": "Spanish",
+          "level": "Native"
+        },
+        "korean": {
+          "language": "Korean",
+          "level": "Elementary"
+        }
+      }
+    },
+    "programming": {
+      "title": "Programming Languages",
+      "description": "Programming languages I work with."
+    },
+    "photography": {
+      "title": "Photography",
+      "description": "Capturing moments through my phone."
+    },
+    "pages-prev": "Previous Page",
+    "pages-prev-title": "Explore",
+    "pages-next": "Next Page",
+    "pages-next-title": "Experience",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "ExperiencePage": {
+    "metadata": "Experience ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "Experience",
+    "section-title": "My Journey",
+    "section-description": "My professional journey and educational background.",
+    "inner-section-work-title": "Work Experience",
+    "inner-section-edu-title": "Education",
+    "workExperienceItems": {
+        "cs252": {
+          "title": "Teaching Assistant (CS252 - System Programming)",
+          "type": "Part-time",
+          "company": "Purdue University",
+          "date": "Jan 2025 - Present",
+          "location": "West Lafayette, IN",
+          "responsibilities-items": "3",
+          "responsibilities": {
+            "0": "Evaluate student projects and lab assignments in C, C++, and Shell Scripting.",
+            "1": "Provide support by addressing student questions and problems during office hours or online forums.",
+            "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
+          },
+          "technologies": "C,C++,Shell Scripting",
+          "link": "https://www.cs.purdue.edu/"
+        },
+      "cs250": {
+        "title": "Teaching Assistant (CS250 - Computer Architecture)",
+        "type": "Part-time",
+        "company": "Purdue University",
+        "date": "Aug 2024 - Dec 2024",
+        "location": "West Lafayette, IN",
+        "responsibilities-items": "3",
+        "responsibilities": {
+          "0": "Evaluate student projects and lab assignments in C, C++, and Assembly.",
+          "1": "Provide support by addressing student questions and problems during office hours or online forums.",
+          "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
+        },
+        "technologies": "C,C++,Assembly,Shell Scripting,Hardware Architecture,Circuits",
+        "link": "'https://www.cs.purdue.edu/"
+      },
+      "jl": {
+        "title": "Customer Service Assistant",
+        "type": "Part-time",
+        "company": "The Julian Center",
+        "date": "Aug 2022 - Present",
+        "location": "Indianapolis, IN",
+        "responsibilities-items": "1",
+        "responsibilities": {
+          "0": "Received and redistributed donated items for resale: This role directly supports the center’s mission to help victims of domestic abuse."
+        },
+        "technologies": "Customer Service",
+        "link": "'https://www.juliancenter.org/thrifty-threads/"
+      },
+      "developer": {
+        "title": "Minecraft Server Developer",
+        "type": "Remote",
+        "company": "Self-Employed",
+        "date": "Aug 2016 - Sep 2020",
+        "location": "Jerez de la Frontera, ES",
+        "responsibilities-items": "2",
+        "responsibilities": {
+          "0": "Game Developer: Designed and developed game add-ons in Java, enhancing the gaming experience for hundreds of online players around the world. This role involved creating engaging content for Minecraft games, successfully generated revenue.",
+          "1": "Server Owner: Owned and managed servers using shell scripting and Java that hosted over 10,000 registered users."
+        },
+        "technologies": "MySQl,CSS,HTML,MariaDB,Product Development,Java,Shell Scripting",
+        "link": "minecraft.net"
+      }
+    },
+    "educationItems": {
+      "purdue": {
+        "degree": "Bachelor of Science in Computer Science",
+        "type": "Undergraduate",
+        "institution": "Purdue University",
+        "date": "Fall 2022 - Present",
+        "location": "West Lafayette, IN",
+        "highlights-items": "5",
+        "highlights": {
+          "0": "GPA: 3.66/4.0",
+          "1": "Dean's List & Semester Honors: Fall 2022, Spring 2023, Fall 2023, Spring 2024, and Fall 2024.",
+          "2": "Awards: 2x Purdue Black Caucus of Faculty & Staff Service Award.",
+          "3": "Activities and societies: Badminton Club and Computer Society.",
+          "4": "Current Vice-President of the Association of Black Computer Scientists."
+        },
+        "relevantCourses": "Competitive Programming I,Computer Architecture,Data Structures and Algorithms,Foundations of Computer Science,Problem Solving And Object-Oriented Programming,Programming in C,Software Engineering I,Systems Programming,Computer Security,Information Systems,Introduction to the Analysis of Algorithms",
+        "link": "https://www.cs.purdue.edu/"
+      },
+      "ab": {
+        "degree": "High School Diploma",
+        "type": "Secondary Education",
+        "institution": "IES Andrés Benítez",
+        "date": "2016 - 2022",
+        "location": "Jerez de la Frontera, ES",
+        "highlights-items": "2",
+        "highlights": {
+          "0": "Coordinated events that raised money for homeless shelters.",
+          "1": "Created my high school's official webpage."
+        },
+        "relevantCourses": "",
+        "link": ""
+      }
+    },
+    "pages-prev": "Previous Page",
+    "pages-prev-title": "About Me",
+    "pages-next": "Next Page",
+    "pages-next-title": "Projects",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "ResumePage":{
+    "metadata": "Resume ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "Resume",
+    "pages-prev": "Previous Page",
+    "pages-prev-title": "Projects",
+    "pages-next": "Next Page",
+    "pages-next-title": "Contact Me",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "ContactPage": {
+    "metadata": "Contact Me  ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "Contact Me",
+    "section-title": "Contact",
+    "section-description": "Feel free to reach out. I'd love to hear from you!",
+    "Email": "Email",
+    "phone": "My phone",
+    "toast-success": "Success!",
+    "toast-success-description": "Email sent successfully!",
+    "toast-error": "Error!",
+    "toast-error-description": "Something went wrong! Try again...",
+    "email-card": {
+      "title": "Send me a message",
+      "description": "Fill out the form below and I'll get back to you as soon as possible.",
+      "name": "Name",
+      "name-holder": "Your name here...",
+      "email": "Email",
+      "email-holder": "Your email here...",
+      "subject": "Subject",
+      "subject-holder": "How can I help you?",
+      "message": "Message",
+      "message-holder": "Your message here...",
+      "button": "Send Message",
+      "button-load": "Loading..."
+    },
+    "pages-prev": "Previous Page",
+    "pages-prev-title": "Resume",
+    "pages-next": "Next Section",
+    "pages-next-title": "Me & Myself",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "BlogsPage": {
+    "metadata": "Blogs  ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "Blogs",
+    "section-title": "Me & Myself",
+    "section-description": "Explore my thoughts and insights about my daily life at Purdue University.",
+    "pages-prev": "Previous Section",
+    "pages-prev-title": "Contact Me",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "PostPage": {
+    "metadata": "Publicación ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-blogs": "Blogs",
+    "date": "Publicado el"
+  }
+}

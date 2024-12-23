@@ -25,6 +25,8 @@ import {
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 import React, {useEffect, useState} from "react";
+import {useTranslations} from "next-intl";
+import {Link} from '@/i18n/routing'
 
 export default function ExperiencePage() {
     const {
@@ -32,141 +34,15 @@ export default function ExperiencePage() {
         isMobile,
     } = useSidebar()
     const isExpanded = state === "expanded";
+    const lan = useTranslations('ExperiencePage')
 
-    const workExperience = [
-        {
-            title: "Teaching Assistant (CS252 - System Programming)",
-            type:
-                "Teaching",
-            company:
-                "Purdue University",
-            date:
-                "Jan 2025 - Present",
-            location:
-                "West Lafayette, IN",
-            responsibilities:
-                [
-                    "Evaluate student projects and lab assignments in C, C++, and Shell Scripting.",
-                    "Provide support by addressing student questions and problems during office hours or online forums.",
-                    "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
-                ],
-            technologies:
-                ["C", "C++", "Shell Scripting"],
-            link: 'https://www.cs.purdue.edu/'
-        },
-        {
-            title: "Teaching Assistant (CS250 - Computer Architecture)",
-            type:
-                "Teaching",
-            company:
-                "Purdue University",
-            date:
-                "Aug 2024 - Dec 2024",
-            location:
-                "West Lafayette, IN",
-            responsibilities:
-                [
-                    "Evaluate student projects and lab assignments in C, C++, and Assembly.",
-                    "Provide support by addressing student questions and problems during office hours or online forums.",
-                    "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
-                ],
-            technologies:
-                ["C", "C++", "Assembly", "Shell Scripting", "Hardware Architecture", "Circuits"],
-            link: 'https://www.cs.purdue.edu/'
-        },
-        {
-            title: "Customer Service Assistant",
-            type:
-                "Part-time",
-            company:
-                "Self-Employed",
-            date:
-                "Aug 2022 - Present",
-            location:
-                "Indianapolis, IN",
-            responsibilities:
-                [
-                    "Received and redistributed donated items for resale: This role directly supports the center’s mission to help victims of domestic abuse.",
-                ],
-            technologies:
-                ["Customer Service", "TailwindCSS", "MongoDB", "Firebase"],
-            link: 'https://www.juliancenter.org/thrifty-threads/'
-        },
-        {
-            title: "Minecraft Server Developer",
-            type:
-                "Remote",
-            company:
-                "Self-Employed",
-            date:
-                "Aug 2016 - Sep 2020",
-            location:
-                "Jerez de la Frontera, ES",
-            responsibilities:
-                [
-                    "Game Developer: Designed and developed game add-ons in Java, enhancing the gaming experience for hundreds of online players around the world. This role involved creating engaging content for Minecraft games, successfully generated revenue.",
-                    "Server Owner: Owned and managed servers using shell scripting and Java that hosted over 10,000 registered users.",
-                ],
-            technologies: ['MySQl', 'CSS', 'HTML', 'MariaDB', 'Product Development', 'Java']
-        }
-    ]
-
-    const education = [
-        {
-            degree: "Bachelor of Science in Computer Science",
-            type:
-                "Undergraduate",
-            institution:
-                "Purdue University",
-            date:
-                "Fall 2022 - Present",
-            location:
-                "West Lafayette, IN",
-            highlights:
-                [
-                    "GPA: 3.66/4.0",
-                    "Dean's List & Semester Honors: Fall 2022, Spring 2023, Fall 2023, Spring 2024, and Fall 2024.",
-                    "Awards: 2x Purdue Black Caucus of Faculty & Staff Service Award.",
-                    "Activities and societies: Badminton Club and Computer Society.",
-                    "Current Vice-President of the Association of Black Computer Scientists."
-                ],
-            relevantCourses:
-                [
-                    "Competitive Programming I",
-                    "Computer Architecture",
-                    "Data Structures and Algorithms",
-                    "Foundations of Computer Science",
-                    "Problem Solving And Object-Oriented Programming",
-                    "Programming in C",
-                    "Software Engineering I",
-                    "Systems Programming",
-                    "Computer Security",
-                    "Information Systems",
-                    "Introduction to the Analysis of Algorithms"
-                ],
-            link: 'https://www.cs.purdue.edu/'
-        },
-        {
-            degree: "High School Diploma",
-            type:
-                "Secondary Education",
-            institution: "IES Andrés Benítez",
-            date: "2016 - 2022",
-            location: "Jerez de la Frontera, ES",
-            highlights: [
-                "Coordinated events that raised money for homeless shelters.",
-                "Created my high school's official webpage.",
-            ],
-            relevantCourses: [],
-            link: null,
-        }
-    ]
-
+    const workExperienceItems = ['cs252', 'cs250', 'jl', 'developer']
+    const educationItems = ['purdue', 'ab']
 
     return (
         <div className="flex flex-col min-h-screen">
             {/* Header */}
-            <title>Experience ⋅ Alejandro Griffith</title>
+            <title>{lan('metadata')}</title>
             <header
                 className="relative z-10 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b dark:border-neutral-800/50 dark:backdrop-blur-sm dark:bg-neutral-950/50">
                 <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32">
@@ -179,7 +55,7 @@ export default function ExperiencePage() {
                                 <TooltipContent side="right"
                                                 className={cn("light:bg-black text-primary-foreground", "border-primary", "shadow-md"
                                                 )}>
-                                    <p>{isExpanded ? 'Close' : 'Open'} sidebar <kbd
+                                    <p>{isExpanded ? lan('sidebar-option-close') : lan('sidebar-option-open')} sidebar <kbd
                                         className="ml-2 rounded border px-1 text-xs border-blue-400 text-blue-500 dark:text-orange-500 dark:border-orange-500">B</kbd>
                                     </p>
                                 </TooltipContent>
@@ -190,11 +66,11 @@ export default function ExperiencePage() {
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
-                                <BreadcrumbLink href="/">Explore</BreadcrumbLink>
+                                <BreadcrumbLink href="/">{lan('nav-bar-explore')}</BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator/>
                             <BreadcrumbItem>
-                                <BreadcrumbPage>Experience</BreadcrumbPage>
+                                <BreadcrumbPage>{lan('nav-bar-page')}</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
@@ -205,10 +81,10 @@ export default function ExperiencePage() {
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
                     <div className="space-y-2 mb-8">
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 select-none">
-                            My Journey
+                            {lan('section-title')}
                         </h1>
                         <p className="text-lg text-gray-500 dark:text-neutral-400 select-none max-w-2xl">
-                            My professional journey and educational background.
+                            {lan('section-description')}
                         </p>
                     </div>
                     <motion.div
@@ -222,7 +98,7 @@ export default function ExperiencePage() {
                         <section className="space-y-6">
                             <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
                                 <Briefcase className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
-                                Work Experience
+                                {lan('inner-section-work-title')}
                             </h2>
 
                             <div className="relative">
@@ -230,8 +106,8 @@ export default function ExperiencePage() {
                                 <div className="absolute left-8 top-0 bottom-4 w-px bg-[#2C2C2C]"/>
 
                                 {/* Experience Items */}
-                                {workExperience.map((experience, index) => (
-                                    <div key={index} className="relative pl-16 pb-10">
+                                {workExperienceItems.map((experience) => (
+                                    <div key={experience} className="relative pl-16 pb-10">
                                         {/* Timeline Dot */}
                                         <div
                                             className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
@@ -241,10 +117,11 @@ export default function ExperiencePage() {
                                                 <div className="space-y-1">
                                                     <div className="flex items-start justify-between">
                                                         <CardTitle className="flex items-center gap-2">
-                                                            <a href={experience.link} target="_blank"
+                                                            <a href={lan(`workExperienceItems.${experience}.link`)}
+                                                               target="_blank"
                                                                className="group flex items-center gap-2">
                                                                 <span
-                                                                    className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{experience.title}</span>
+                                                                    className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{lan(`workExperienceItems.${experience}.title`)}</span>
                                                                 {!isMobile && (
                                                                     <ExternalLink
                                                                         className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
@@ -253,37 +130,44 @@ export default function ExperiencePage() {
                                                         </CardTitle>
                                                         <Badge variant="secondary"
                                                                className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
-                                                            {experience.type}
+                                                            {lan(`workExperienceItems.${experience}.type`)}
                                                         </Badge>
                                                     </div>
                                                     <div className="flex items-center gap-2 text-muted-foreground">
                                                         <Building
                                                             className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                        <span>{experience.company}</span>
+                                                        <span>{lan(`workExperienceItems.${experience}.company`)}</span>
                                                     </div>
                                                     <div
                                                         className="flex items-center gap-4 text-sm text-muted-foreground">
                                                         <div className="flex items-center gap-1">
                                                             <Calendar
                                                                 className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{experience.date}</span>
+                                                            <span>{lan(`workExperienceItems.${experience}.date`)}</span>
                                                         </div>
                                                         <div className="flex items-center gap-1">
                                                             <MapPin
                                                                 className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{experience.location}</span>
+                                                            <span>{lan(`workExperienceItems.${experience}.location`)}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </CardHeader>
                                             <CardContent>
                                                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                                                    {experience.responsibilities.map((responsibility, idx) => (
-                                                        <li key={idx}>{responsibility}</li>
-                                                    ))}
+                                                    {(() => {
+                                                        const items = [];
+                                                        const responsibilities = parseInt(lan(`workExperienceItems.${experience}.responsibilities-items`), 10) || 0
+                                                        for (let i = 0; i < responsibilities; i++) {
+                                                            items.push(
+                                                                <li key={i}>{lan(`workExperienceItems.${experience}.responsibilities.${i}`)}</li>
+                                                            );
+                                                        }
+                                                        return items;
+                                                    })()}
                                                 </ul>
                                                 <div className="flex gap-2 mt-4 flex-wrap">
-                                                    {experience.technologies.map((tech, idx) => (
+                                                    {lan(`workExperienceItems.${experience}.technologies`).split(",").map((tech, idx) => (
                                                         <Badge key={idx} variant="outline"
                                                                className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none">
                                                             {tech}
@@ -302,7 +186,7 @@ export default function ExperiencePage() {
                         <section className="space-y-6 mt-10">
                             <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
                                 <GraduationCap className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
-                                Education
+                                {lan('inner-section-edu-title')}
                             </h2>
 
                             <div className="relative">
@@ -310,23 +194,23 @@ export default function ExperiencePage() {
                                 <div className="absolute left-8 top-0 bottom-0 w-px bg-[#2C2C2C]"/>
 
                                 {/* Education Items */}
-                                {education.map((edu, index) => (
-                                    <div key={index} className="relative pl-16 pb-10">
+                                {educationItems.map((edu) => (
+                                    <div key={edu} className="relative pl-16 pb-10">
                                         {/* Timeline Dot */}
                                         <div
                                             className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
-
                                         <Card
                                             className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
                                             <CardHeader>
                                                 <div className="space-y-1">
                                                     <div className="flex items-start justify-between">
-                                                        {edu.link != null ? (
+                                                        {lan(`educationItems.${edu}.link`).trim() !== "" ? (
                                                             <CardTitle className="flex items-center gap-2">
-                                                                <a href={edu.link} target="_blank"
+                                                                <a href={lan(`educationItems.${edu}.link`)}
+                                                                   target="_blank"
                                                                    className="group flex items-center gap-2">
                                                                     <span
-                                                                        className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{edu.degree}</span>
+                                                                        className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{lan(`educationItems.${edu}.degree`)}</span>
                                                                     {!isMobile && (
                                                                         <ExternalLink
                                                                             className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
@@ -335,46 +219,59 @@ export default function ExperiencePage() {
                                                             </CardTitle>
                                                         ) : (
                                                             <CardTitle
-                                                                className="text-xl font-semibold">{edu.degree}</CardTitle>
+                                                                className="text-xl font-semibold">{lan(`educationItems.${edu}.degree`)}</CardTitle>
                                                         )
                                                         }
                                                         <Badge variant="secondary"
                                                                className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
-                                                            {edu.type}
+                                                            {lan(`educationItems.${edu}.type`)}
                                                         </Badge>
                                                     </div>
                                                     <div className="flex items-center gap-2 text-muted-foreground">
                                                         <Building
                                                             className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                        <span>{edu.institution}</span>
+                                                        <span>{lan(`educationItems.${edu}.institution`)}</span>
                                                     </div>
                                                     <div
                                                         className="flex items-center gap-4 text-sm text-muted-foreground">
                                                         <div className="flex items-center gap-1">
                                                             <Calendar
                                                                 className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{edu.date}</span>
+                                                            <span>{lan(`educationItems.${edu}.date`)}</span>
                                                         </div>
                                                         <div className="flex items-center gap-1">
                                                             <MapPin
                                                                 className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{edu.location}</span>
+                                                            <span>{lan(`educationItems.${edu}.location`)}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </CardHeader>
                                             <CardContent>
                                                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                                                    {edu.highlights.map((highlight, idx) => (
-                                                        <li key={idx}>{highlight}</li>
-                                                    ))}
+                                                    {(() => {
+                                                        const items = [];
+                                                        const highlights = parseInt(lan(`educationItems.${edu}.highlights-items`), 10) || 0
+                                                        for (let i = 0; i < highlights; i++) {
+                                                            items.push(
+                                                                <li key={i}>{lan(`educationItems.${edu}.highlights.${i}`)}</li>
+                                                            );
+                                                        }
+                                                        return items;
+                                                    })()}
                                                 </ul>
+
                                                 <div className="flex gap-2 mt-4 flex-wrap">
-                                                    {edu.relevantCourses.map((course, idx) => (
-                                                        <Badge key={idx} variant="outline"
-                                                               className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none">
-                                                            {course}
-                                                        </Badge>
+                                                    {lan(`educationItems.${edu}.relevantCourses`).split(',').map((course) => (
+                                                        course.trim() !== "" ? (
+                                                            <Badge
+                                                                key={course}
+                                                                variant="outline"
+                                                                className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none"
+                                                            >
+                                                                {course.trim()}
+                                                            </Badge>
+                                                        ) : null
                                                     ))}
                                                 </div>
                                             </CardContent>
@@ -387,33 +284,33 @@ export default function ExperiencePage() {
                 </div>
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
-                        <a href="/about"
-                           className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+                        <Link href="/about"
+                              className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
                             <ChevronLeft className="w-4 h-4"/>
                             <div>
-                                <div className="text-sm font-medium">Previous Page</div>
-                                <div className="text-xl dark:text-white text-black">About Me</div>
+                                <div className="text-sm font-medium">{lan('pages-prev')}</div>
+                                <div className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>
                             </div>
-                        </a>
-                        <a href="/Projects"
-                           className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
+                        </Link>
+                        <Link href="/projects"
+                              className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
                             <div>
-                                <div className="text-sm font-medium">Next Page</div>
-                                <div className="text-xl dark:text-white text-black">Projects</div>
+                                <div className="text-sm font-medium">{lan('pages-next')}</div>
+                                <div className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
                             </div>
                             <ChevronRight className="w-4 h-4"/>
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             </main>
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">
                 <h2 className="text-gray-500">
-                    Made with love by <a href="https://github.com/alesgsanudoo" target="_blank"
-                                         className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!
+                    {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"
+                                                 className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!
                 </h2>
                 <h2 className="text-gray-500 text-center">
-                    Built with <a href="https://nextjs.org/" target="_blank"
-                                  className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">NextJS</a> and <a
+                    {lan('footer.paragraph2')}<a href="https://nextjs.org/" target="_blank"
+                                                 className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">NextJS</a>{lan('footer.paragraph3')}<a
                     href="https://tailwindcss.com/" target="_blank"
                     className="font-bold text-blue-500 hover:text-blue-700  dark:text-amber-500 dark:hover:text-amber-700">TailwindCSS</a>.
                 </h2>

@@ -12,6 +12,7 @@ import {
     SidebarMenuSubButton,
     SidebarMenuSubItem, useSidebar,
 } from "@/components/ui/sidebar"
+import {Link} from "@/i18n/routing"
 
 export function NavMain({items}) {
     const {
@@ -25,7 +26,7 @@ export function NavMain({items}) {
                 {items.map((item) => (
                     <SidebarMenuItem key={item.title}>
                         <SidebarMenuButton asChild isActive={item.isActive}>
-                            <a href={item.url}>
+                            <Link href={item.url}>
                                 {item.icon && <item.icon/>}
                                 <span>{item.title}</span>
                                 {!isMobile && (
@@ -34,7 +35,7 @@ export function NavMain({items}) {
                                     <b className="opacity-70 border dark:border-orange-500 border-blue-500 px-1.5 py-1 rounded">{item.number}</b>
                                 </SidebarMenuBadge>
                                 )}
-                            </a>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 ))}

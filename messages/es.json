@@ -1,0 +1,267 @@
+{
+  "AppSidebar": {
+    "explore": "Explorar",
+    "about-me": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "resume": "Currículum",
+    "contact-me": "Contáctame",
+    "resources": "Recursos",
+    "me-and-myself": "Yo y mí mismo",
+    "appearance": "Apariencia",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "languages": "Idiomas"
+  },
+  "AboutPage": {
+    "metadata": "Sobre Mí ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Sobre mí",
+    "section-title": "Sobre Mí",
+    "content": {
+      "paragraph1": "Poco sabía, cuando toqué mi primera laptop, que me apasionaría la informática y el desarrollo de proyectos. Mi viaje comenzó creando servidores de Minecraft, desarrollando complementos y diseñando sitios web y tiendas para estos servidores. Después de gestionar con éxito varios servidores con más de 10,000 jugadores, decidí profundizar en la informática.",
+      "paragraph2": "Hoy en día, he creado varios proyectos privados, públicos y académicos, algunos de los cuales han generado ingresos. Actualmente, estoy desarollando proyectos para mostrar mis habilidades, particularmente utilizando C++ o Python, lenguajes que estoy ansioso por aprender más y con los que disfruto programar.",
+      "paragraph3": "Cuando no estoy programando, disfruto practicando cualquier tipo de deporte o juego, haciendo ejercicio, viendo series, leyendo y pasando tiempo con amigos y familia.",
+      "paragraph4": "No dudes en contactarme; me encanta conocer gente nueva y entablar conversaciones. Espero que te haya gusyado mi página web."
+    },
+    "interest": {
+      "title": "Intereses de Programación",
+      "description": "Cosas que me apasionan.",
+      "list": {
+        "systems": "Sistemas",
+        "backend": "Backend",
+        "database": "Bases de Datos",
+        "cloud": "Nube",
+        "low-level": "Bajo Nivel",
+        "object-oriented": "Orientado a Objetos"
+      }
+    },
+    "languages": {
+      "title": "Idiomas",
+      "description": "Los que uso para conectarme con el mundo.",
+      "list": {
+        "english": {
+          "language": "Inglés",
+          "level": "Nativo"
+        },
+        "spanish": {
+          "language": "Español",
+          "level": "Nativo"
+        },
+        "korean": {
+          "language": "Coreano",
+          "level": "Elemental"
+        }
+      }
+    },
+    "programming": {
+      "title": "Lenguajes de Programación",
+      "description": "Lenguajes de programación con los que trabajo."
+    },
+    "photography": {
+      "title": "Fotografía",
+      "description": "Capturando momentos con mi teléfono."
+    },
+    "pages-prev": "Página Anterior",
+    "pages-prev-title": "Explorar",
+    "pages-next": "Siguente Página",
+    "pages-next-title": "Experiencia",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "ExperiencePage": {
+    "metadata": "Experiencia ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Experiencia",
+    "section-title": "Mi Trayectoria",
+    "section-description": "Mi experiencia profesional y formación académica.",
+    "inner-section-work-title": "Experiencia Laboral",
+    "inner-section-edu-title": "Educación",
+    "workExperienceItems": {
+      "cs252": {
+        "title": "Asistente de Enseñanza (CS252 - Programación de Sistemas)",
+        "type": "Medio Tiempo",
+        "company": "Purdue University",
+        "date": "Ene 2025 - Presente",
+        "location": "West Lafayette, IN",
+        "responsibilities-items": "3",
+        "responsibilities": {
+          "0": "Evaluar proyectos y tareas de laboratorio de los estudiantes en C, C++ y Shell Scripting.",
+          "1": "Proporcionar soporte respondiendo preguntas y resolviendo problemas durante horas de oficina o en foros en línea.",
+          "2": "Dirigir sesiones de laboratorio para ayudar a los estudiantes con tareas, preparación para exámenes y preguntas relacionadas con el curso."
+        },
+        "technologies": "C,C++,Shell Scripting",
+        "link": "https://www.cs.purdue.edu/"
+      },
+      "cs250": {
+        "title": "Asistente de Enseñanza (CS250 - Arquitectura de Computadoras)",
+        "type": "Medio Tiempo",
+        "company": "Purdue University",
+        "date": "Ago 2024 - Dic 2024",
+        "location": "West Lafayette, IN",
+        "responsibilities-items": "3",
+        "responsibilities": {
+          "0": "Evaluar proyectos y tareas de laboratorio de los estudiantes en C, C++ y Assembly.",
+          "1": "Proporcionar soporte respondiendo preguntas y resolviendo problemas durante horas de oficina o en foros en línea.",
+          "2": "Dirigir sesiones de laboratorio para ayudar a los estudiantes con tareas, preparación para exámenes y preguntas relacionadas con el curso."
+        },
+        "technologies": "C,C++,Assembly,Shell Scripting,Arquitectura de Hardware,Circuitos",
+        "link": "'https://www.cs.purdue.edu/"
+      },
+      "jl": {
+        "title": "Asistente de Atención al Cliente",
+        "type": "Medio Tiempo",
+        "company": "The Julian Center",
+        "date": "Ago 2022 - Presente",
+        "location": "Indianapolis, IN",
+        "responsibilities-items": "1",
+        "responsibilities": {
+          "0": "Recibir y redistribuir artículos donados para su reventa: Este rol apoya directamente la misión del centro de ayudar a las víctimas de abuso doméstico."
+        },
+        "technologies": "Atención al Cliente",
+        "link": "'https://www.juliancenter.org/thrifty-threads/"
+      },
+      "developer": {
+        "title": "Desarrollador de Servidores de Minecraft",
+        "type": "Remoto",
+        "company": "Autónomo",
+        "date": "Ago 2016 - Sep 2020",
+        "location": "Jerez de la Frontera, ES",
+        "responsibilities-items": "2",
+        "responsibilities": {
+          "0": "Desarrollador de Juegos: Diseñé y desarrollé complementos para juegos en Java, mejorando la experiencia de juego para cientos de jugadores en línea alrededor del mundo. Este rol incluyó la creación de contenido atractivo para juegos de Minecraft, generando ingresos exitosamente.",
+          "1": "Propietario de Servidor: Administré servidores usando scripts de shell y Java que alojaron a más de 10,000 usuarios registrados."
+        },
+        "technologies": "MySQL,CSS,HTML,MariaDB,Desarrollo de Productos,Java,Shell Scripting",
+        "link": "minecraft.net"
+      }
+    },
+    "educationItems": {
+      "purdue": {
+        "degree": "Licenciatura en Ciencias en Informática",
+        "type": "Pregrado",
+        "institution": "Purdue University",
+        "date": "Otoño 2022 - Presente",
+        "location": "West Lafayette, IN",
+        "highlights-items": "5",
+        "highlights": {
+          "0": "Promedio: 3.66/4.0",
+          "1": "Lista del Decano y Honores Semestrales: Otoño 2022, Primavera 2023, Otoño 2023, Primavera 2024 y Otoño 2024.",
+          "2": "Premios: 2x Premio de Servicio del Purdue Black Caucus of Faculty & Staff.",
+          "3": "Actividades y sociedades: Club de Bádminton y Sociedad de Informática.",
+          "4": "Actual Vicepresidente de la Association of Black Computer Scientists."
+        },
+        "relevantCourses": "Programación Competitiva I,Arquitectura de Computadoras,Estructuras de Datos y Algoritmos,Fundamentos de Ciencias de la Computación,Resolución de Problemas y Programación Orientada a Objetos,Programación en C,Ingeniería de Software I,Programación de Sistemas,Seguridad Informática,Sistemas de Información,Introducción al Análisis de Algoritmos",
+        "link": "https://www.cs.purdue.edu/"
+      },
+      "ab": {
+        "degree": "Diploma de Educación Secundaria",
+        "type": "Educación Secundaria",
+        "institution": "IES Andrés Benítez",
+        "date": "2016 - 2022",
+        "location": "Jerez de la Frontera, ES",
+        "highlights-items": "2",
+        "highlights": {
+          "0": "Coordiné eventos que recaudaron fondos para refugios de personas sin hogar.",
+          "1": "Creé la página web oficial de mi escuela secundaria."
+        },
+        "relevantCourses": "",
+        "link": ""
+      }
+    },
+    "pages-prev": "Página Anterior",
+    "pages-prev-title": "Sobre Mí",
+    "pages-next": "Siguente Página",
+    "pages-next-title": "Proyectos",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "ResumePage": {
+    "metadata": "Currículum ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Currículum",
+    "pages-prev": "Página Anterior",
+    "pages-prev-title": "Proyectos",
+    "pages-next": "Siguente Página",
+    "pages-next-title": "Contáctame",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "ContactPage": {
+    "metadata": "Contáctame ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Contáctame",
+    "section-title": "Contacto",
+    "section-description": "No dudes en escribirme. ¡Me encantaría saber de ti!",
+    "Email": "Correo Electrónico",
+    "phone": "Mi teléfono",
+    "toast-success": "¡Éxito!",
+    "toast-success-description": "¡Correo enviado con éxito!",
+    "toast-error": "¡Error!",
+    "toast-error-description": "¡Algo salió mal! Inténtalo de nuevo...",
+    "email-card": {
+      "title": "Envíame un mensaje",
+      "description": "Completa el formulario a continuación y te responderé lo antes posible.",
+      "name": "Nombre",
+      "name-holder": "Tu nombre aquí...",
+      "email": "Correo Electrónico",
+      "email-holder": "Tu correo aquí...",
+      "subject": "Asunto",
+      "subject-holder": "¿Cómo puedo ayudarte?",
+      "message": "Mensaje",
+      "message-holder": "Tu mensaje aquí...",
+      "button": "Enviar Mensaje",
+      "button-load": "Cargando..."
+    },
+    "pages-prev": "Página Anterior",
+    "pages-prev-title": "Currículum",
+    "pages-next": "Siguiente Sección",
+    "pages-next-title": "Yo y mí mismo",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "BlogsPage": {
+    "metadata": "Blogs ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Blogs",
+    "section-title": "Yo y mí mismo",
+    "section-description": "Explora mis pensamientos e ideas sobre mi vida diaria en la Universidad de Purdue.",
+    "pages-prev": "Sección Anterior",
+    "pages-prev-title": "Contáctame",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "PostPage": {
+    "metadata": "Publicación ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-blogs": "Blogs",
+    "date": "Publicado el"
+  }
+}

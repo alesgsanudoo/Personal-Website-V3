@@ -14,7 +14,7 @@ import {
 import {useEffect, useState} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 
-export function NavThemes() {
+export function NavThemes({title, dark, light}) {
     const [mounted, setMounted] = useState(false)
     const {setTheme, theme} = useTheme()
     const {state, isMobile} = useSidebar()
@@ -72,7 +72,7 @@ export function NavThemes() {
     return (
         <SidebarGroup>
             <SidebarGroupLabel
-                className={theme === "light" ? "font-bold text-md text-blue-500 transition-colors duration-300 ease-in-out" : "font-bold text-md text-amber-500 transition-colors duration-300 ease-in-out"}>Appearance</SidebarGroupLabel>
+                className={theme === "light" ? "font-bold text-md text-blue-500 transition-colors duration-300 ease-in-out" : "font-bold text-md text-amber-500 transition-colors duration-300 ease-in-out"}>{title}</SidebarGroupLabel>
             <SidebarGroupContent>
                 <SidebarMenu>
                     <SidebarMenuItem>
@@ -85,7 +85,7 @@ export function NavThemes() {
                             <div>
                                 <Sun
                                     className={`h-[1.2rem] w-[1.2rem] mr-2 ${theme === "light" ? "text-blue-500" : "opacity-50"}`}/>
-                                <span>Light</span>
+                                <span>{light}</span>
                                 {!isMobile && (
                                     <SidebarMenuBadge
                                         className="flex items-center space-x-1 px-1.5 py-0.5 text-xs font-medium dark:text-orange-500 text-blue-500">
@@ -105,7 +105,7 @@ export function NavThemes() {
                             <div>
                                 <Moon
                                     className={`h-[1.2rem] w-[1.2rem] mr-2 ${theme === "dark" ? "text-orange-500" : "opacity-50"}`}/>
-                                <span>Dark</span>
+                                <span>{dark}</span>
                                 {!isMobile && (
                                     <SidebarMenuBadge
                                         className="flex items-center space-x-1 px-1.5 py-0.5 text-xs font-medium dark:text-orange-500 text-blue-500">

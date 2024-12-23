@@ -22,6 +22,7 @@ import {
 import Image from 'next/image'
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import {Skeleton} from "@/components/ui/skeleton"
+import {useTranslations} from "next-intl";
 
 const LoadingImage = ({src, alt, width, height, className}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -65,12 +66,12 @@ const programmingLanguages = [
 ]
 
 const interest = {
-    Systems: ServerCog,
-    Backend: DatabaseBackup,
-    Database: Database,
-    Cloud: Server,
-    "Low-level": Binary,
-    "Object-oriented": Code,
+    systems: ServerCog,
+    backend: DatabaseBackup,
+    database: Database,
+    cloud: Server,
+    "low-level": Binary,
+    "object-oriented": Code,
 }
 
 const posts = [
@@ -124,11 +125,11 @@ const posts = [
     },
 ]
 
-const languages = "English: Native, Spanish: Native, Korean: Elementary"
-
-
-const CardsAbout = ({title, description, icon: Icon, type = "default"}) => {
+const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
     const cardRef = useRef(null)
+    const lan = useTranslations('AboutPage');
+    const languages = ['english', 'spanish', 'korean'];
+
 
     return (
         <motion.div
@@ -176,20 +177,16 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"}) => {
                 ) : type === "languages" ? (
                     <CardContent>
                         <div className="space-y-4">
-                            {languages.split(", ").map((lang) => {
-                                const [language, level] = lang.split(": ")
-                                return (
-                                    <div
-                                        key={language}
-                                        className="flex items-center justify-between p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
-                                    >
-                                        <span
-                                            className="text-gray-900 dark:text-neutral-200  select-none">{language}</span>
-                                        <span
-                                            className="text-sm text-blue-500 dark:text-amber-500  select-none">{level}</span>
-                                    </div>
-                                )
-                            })}
+                            {languages.map((item) => (
+                                <div
+                                    key={item}
+                                    className="flex items-center justify-between p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
+                                >
+                                    <span className="text-gray-900 dark:text-neutral-200 select-none">{lan(`languages.list.${item}.language`)}</span>
+                                    <span
+                                        className="text-sm text-blue-500 dark:text-amber-500 select-none">{lan(`languages.list.${item}.level`)}</span>
+                                </div>
+                            ))}
                         </div>
                     </CardContent>
                 ) : type === "interests" ? (
@@ -203,7 +200,7 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"}) => {
                                     >
                                         <IconComponent className="h-8 w-8 text-blue-500 dark:text-amber-500"/>
                                         <span
-                                            className="text-xs text-gray-600 dark:text-neutral-400  select-none">{name}</span>
+                                            className="text-xs text-gray-600 dark:text-neutral-400  select-none">{lan(`interest.list.${name}`)}</span>
                                     </div>
                                 ))}
                             </div>

@@ -1,14 +1,5 @@
 "use client"
 
-import {Command, Folder, Forward, MoreHorizontal, Trash2} from 'lucide-react'
-
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import {
     SidebarGroup,
     SidebarGroupLabel,
@@ -19,8 +10,9 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar"
 import * as React from "react";
+import {Link} from "@/i18n/routing"
 
-export function NavResources({res}) {
+export function NavResources({items, title}) {
     const {state, isMobile} = useSidebar()
 
     return (
@@ -28,14 +20,14 @@ export function NavResources({res}) {
             {state === "expanded" && (
                 <SidebarGroupLabel
                     className={"font-bold text-md text-blue-500 dark:text-amber-500 transition-colors duration-300 ease-in-out"}>
-                    <span>Resources</span>
+                    <span>{title}</span>
                 </SidebarGroupLabel>
             )}
             <SidebarMenu>
-                {res.map((item) => (
+                {items.map((item) => (
                     <SidebarMenuItem key={item.name}>
                         <SidebarMenuButton asChild isActive={item.isActive}>
-                            <a href={item.url}>
+                            <Link href={item.url}>
                                 {item.icon && <item.icon/>}
                                 <span>{item.name}</span>
                                 { !isMobile && (
@@ -44,7 +36,7 @@ export function NavResources({res}) {
                                     <b className="opacity-70 border dark:border-orange-500 border-blue-500 px-1.5 py-1 rounded">{item.number}</b>
                                 </SidebarMenuBadge>
                                 )}
-                            </a>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 ))}
