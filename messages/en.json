@@ -257,11 +257,31 @@
     }
   },
   "PostPage": {
-    "metadata": "Publicación ⋅ Alejandro Griffith",
+    "metadata": "Post ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-blogs": "Blogs",
+    "date": "Published on",
+    "other": "You might also like",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "NotFound": {
+    "metadata": "Not found ⋅ Alejandro Griffith",
     "sidebar-option-close": "Cerrar",
     "sidebar-option-open": "Abrir",
-    "nav-bar-explore": "Explorar",
-    "nav-bar-blogs": "Blogs",
-    "date": "Publicado el"
+    "title": "Oops! Page not found.",
+    "description": "I think you took a wrong turn at the Milky Way, let's hit reset and try again!",
+    "nav-bar-page": "hello, ig? more like, bye, ig. This page ghosted you harder than your crush!",
+    "back-home": "Go to explore again",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
   }
 }

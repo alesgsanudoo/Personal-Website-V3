@@ -5,6 +5,7 @@ import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/compon
 import {SidebarTrigger, useSidebar} from "@/components/ui/sidebar"
 import {cn} from "@/lib/utils"
 import {Separator} from "@/components/ui/separator"
+import {NotebookText} from "lucide-react"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -15,23 +16,24 @@ import {
 } from "@/components/ui/breadcrumb"
 import React from "react";
 import {motion} from "motion/react";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import Markdown from "markdown-to-jsx";
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
+import {Link} from "@/i18n/routing";
 
-export function BlogContent({postName, postDate, postContent}) {
+export function BlogContent({postName, postDate, postContent, otherPosts}) {
     const {
         state,
         isMobile,
     } = useSidebar()
     const isExpanded = state === "expanded"
     const lan = useTranslations('PostPage')
-
     return (
         <>
             {/* Header */}
             <title>{lan('metadata')}</title>
             <header
-                className="relative z-10 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b dark:border-neutral-800/50 dark:backdrop-blur-sm dark:bg-neutral-950/50">
+                className="sticky top-0 z-20 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b dark:border-neutral-800/50">
                 <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32">
                     {!isMobile ? (
                         <TooltipProvider>
@@ -93,6 +95,52 @@ export function BlogContent({postName, postDate, postContent}) {
                                 <CardContent>
                                     <div className="prose dark:prose-invert max-w-none">
                                         <Markdown>{postContent}</Markdown>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                            <Card
+                                className="mt-10 bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full"
+                                suppressHydrationWarning
+                            >
+                                <CardHeader>
+                                    <CardTitle
+                                        className="text-xl font-semibold text-gray-900 dark:text-neutral-200 select-none">{lan('other')}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-2 items-center">
+                                        <Carousel>
+                                            <CarouselContent className="-ml-1">
+                                                {otherPosts.map((post) => (
+                                                    <CarouselItem key={post.data.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                                                        <div className="p-1">
+                                                            <Card
+                                                                  className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
+                                                                <CardHeader>
+                                                                    <CardTitle className="text-xl font-semibold">
+                                                                        <Link href={`/blogs/${post.slug}`}
+                                                                              className="hover:text-blue-500 dark:hover:text-amber-500 transition-colors">
+                                                                            {post.data.title}
+                                                                        </Link>
+                                                                    </CardTitle>
+                                                                </CardHeader>
+                                                                <CardContent>
+                                                                    <p className="text-gray-600 dark:text-gray-300 line-clamp-2">{post.data.excerpt}</p>
+                                                                </CardContent>
+                                                                <CardFooter
+                                                                    className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                                                                    <span>{post.data.date}</span>
+                                                                    <span>{post.data.readTime}</span>
+                                                                </CardFooter>
+                                                            </Card>
+                                                        </div>
+                                                    </CarouselItem>
+                                                ))}
+                                            </CarouselContent>
+                                            <div className="flex justify-center gap-2 mt-4">
+                                                <CarouselPrevious className="static translate-y-0"/>
+                                                <CarouselNext className="static translate-y-0"/>
+                                            </div>
+                                        </Carousel>
                                     </div>
                                 </CardContent>
                             </Card>

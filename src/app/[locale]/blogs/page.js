@@ -74,7 +74,7 @@ export default function BlogsPage() {
             {/* Header */}
             <title>{lan('metadata')}</title>
             <header
-                className="relative z-10 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 border-b dark:border-neutral-800/50 dark:backdrop-blur-sm dark:bg-neutral-950/50">
+                className="sticky top-0 z-20 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b dark:border-neutral-800/50">
                 <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32">
                     {!isMobile ? (
                         <TooltipProvider>
@@ -96,7 +96,7 @@ export default function BlogsPage() {
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
-                                <BreadcrumbLink href="/">{lan('nav-bar-explore')}</BreadcrumbLink>
+                                <BreadcrumbLink href="/blogs">{lan('nav-bar-explore')}</BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator/>
                             <BreadcrumbItem>

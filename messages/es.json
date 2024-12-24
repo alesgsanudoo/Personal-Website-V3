@@ -262,6 +262,26 @@
     "sidebar-option-open": "Abrir",
     "nav-bar-explore": "Explorar",
     "nav-bar-blogs": "Blogs",
-    "date": "Publicado el"
+    "date": "Publicado el",
+    "other": "También te puede interesar",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
+  "NotFound": {
+    "metadata": "No encontrado ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "title": "¡Ups! Página no encontrada.",
+    "description": "Creo que tomaste un desvío en la Vía Láctea, vamos a reiniciar y a intentarlo de nuevo.",
+    "nav-bar-page": "hola, supongo? más bien, adiós. Esta página te dejó más que tu crush.",
+    "back-home": "Volver a explorar",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
   }
 }
