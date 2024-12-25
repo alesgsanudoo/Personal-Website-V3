@@ -1,17 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { useTheme } from "next-themes"
 
 import {
-    SidebarGroup, SidebarGroupContent,
+    SidebarGroupContent,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem, useSidebar,
 } from "@/components/ui/sidebar"
 
-export function NavSocial({ socials }) {
-    const { state } = useSidebar()
+export function NavSocial({socials}) {
+    const {state} = useSidebar()
     if (state === "expanded") {
         return (
             <SidebarGroupContent>
@@ -24,7 +23,7 @@ export function NavSocial({ socials }) {
                                 </a>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
-                        ))}
+                    ))}
                 </SidebarMenu>
             </SidebarGroupContent>
         )

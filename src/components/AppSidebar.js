@@ -2,20 +2,18 @@
 
 import * as React from "react"
 import {
-    AudioWaveform,
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
-    GalleryVerticalEnd,
-    Map,
-    PieChart,
-    Settings2,
-    SquareTerminal,
-    Sun,
-    Moon, Instagram, Github, Linkedin, User, Briefcase, FileUser, Contact, FlaskConical, Compass, Newspaper, Send
+    Instagram,
+    Github,
+    Linkedin,
+    User,
+    Briefcase,
+    FileUser,
+    Contact,
+    FlaskConical,
+    Compass,
+    Newspaper
 } from 'lucide-react'
-import { usePathname, useRouter } from "@/i18n/routing"
+import {usePathname, useRouter} from "@/i18n/routing"
 import {NavMain} from "@/components/nav-main"
 import {NavResources} from "@/components/nav-resources"
 import {
@@ -35,7 +33,6 @@ import {useTranslations} from "next-intl";
 export function AppSidebar(props) {
     const {
         state,
-        isMobile,
     } = useSidebar()
 
     const pathname = usePathname()

@@ -10,17 +10,14 @@ import {Link} from "@/i18n/routing"
 import {Separator} from "@/components/ui/separator";
 import "./space.css";
 import "@/app/globals.css"
-import {motion} from "motion/react"
 import {
     Breadcrumb,
     BreadcrumbItem,
-    BreadcrumbLink,
     BreadcrumbList, BreadcrumbPage,
-    BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 
 const Meteor = () => {
-    const [position, setPosition] = useState({ top: 0, left: 0 });
+    const [position, setPosition] = useState({top: 0, left: 0});
 
     const generatePosition = () => {
         const viewportWidth = window.innerWidth;

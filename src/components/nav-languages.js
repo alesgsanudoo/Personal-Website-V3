@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Globe } from 'lucide-react'
-import { Locale, usePathname, useRouter } from '@/i18n/routing'
+import {usePathname, useRouter} from '@/i18n/routing'
 
 import {
     SidebarGroup,
@@ -14,8 +13,8 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "@/components/ui/sidebar"
-import { useEffect, useState } from "react"
-import { Skeleton } from "@/components/ui/skeleton"
+import {useEffect, useState} from "react"
+import {Skeleton} from "@/components/ui/skeleton"
 import {useLocale} from "next-intl";
 
 const languages = [
@@ -38,7 +37,8 @@ const languages = [
                         <g id="s9">
                             <g id="s5">
                                 <g id="s4">
-                                    <path id="s" d="M24,13.8l1,2.8h2.9l-2.4,1.7l0.9,2.8l-2.4-1.7l-2.4,1.7l0.9-2.8l-2.4-1.7h2.9z"/>
+                                    <path id="s"
+                                          d="M24,13.8l1,2.8h2.9l-2.4,1.7l0.9,2.8l-2.4-1.7l-2.4,1.7l0.9-2.8l-2.4-1.7h2.9z"/>
                                     <use href="#s" y="26"/>
                                 </g>
                                 <use href="#s4" y="52"/>
@@ -72,14 +72,14 @@ export function NavLanguages({title}) {
     const router = useRouter()
     const pathname = usePathname()
     const locale = useLocale()
-    const { state, isMobile } = useSidebar()
+    const {state, isMobile} = useSidebar()
 
     useEffect(() => {
         setMounted(true)
     }, [])
 
     const handleLanguageChange = (newLocale) => {
-        router.push(pathname, { locale: newLocale })
+        router.push(pathname, {locale: newLocale})
     }
 
     useEffect(() => {
@@ -121,7 +121,8 @@ export function NavLanguages({title}) {
 
     return (
         <SidebarGroup>
-            <SidebarGroupLabel className="font-bold text-md transition-colors duration-300 ease-in-out text-blue-500 dark:text-amber-500">
+            <SidebarGroupLabel
+                className="font-bold text-md transition-colors duration-300 ease-in-out text-blue-500 dark:text-amber-500">
                 {title}
             </SidebarGroupLabel>
             <SidebarGroupContent>
@@ -138,7 +139,8 @@ export function NavLanguages({title}) {
                                     <span className="mr-2">{lang.flag}</span>
                                     <span>{lang.name}</span>
                                     {!isMobile && (
-                                        <SidebarMenuBadge className="flex items-center space-x-1 px-1.5 py-0.5 text-xs font-medium dark:text-orange-500 text-blue-500">
+                                        <SidebarMenuBadge
+                                            className="flex items-center space-x-1 px-1.5 py-0.5 text-xs font-medium dark:text-orange-500 text-blue-500">
                                             <b className="opacity-70 border dark:border-orange-500 border-blue-500 px-1.5 py-1 rounded">{lang.shortcut}</b>
                                         </SidebarMenuBadge>
                                     )}

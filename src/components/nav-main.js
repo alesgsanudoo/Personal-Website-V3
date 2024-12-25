@@ -1,22 +1,16 @@
 "use client"
 
-import {Command} from 'lucide-react'
-
 import {
     SidebarGroup,
-    SidebarGroupLabel,
     SidebarMenu, SidebarMenuBadge,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarMenuSub,
-    SidebarMenuSubButton,
-    SidebarMenuSubItem, useSidebar,
+    useSidebar,
 } from "@/components/ui/sidebar"
 import {Link} from "@/i18n/routing"
 
 export function NavMain({items}) {
     const {
-        state,
         isMobile,
         setOpenMobile,
     } = useSidebar()
@@ -26,7 +20,9 @@ export function NavMain({items}) {
             <SidebarMenu>
                 {items.map((item) => (
                     <SidebarMenuItem key={item.title}>
-                        <SidebarMenuButton asChild isActive={item.isActive} onClick={() => {setOpenMobile(false)}}>
+                        <SidebarMenuButton asChild isActive={item.isActive} onClick={() => {
+                            setOpenMobile(false)
+                        }}>
                             <Link href={item.url}>
                                 {item.icon && <item.icon/>}
                                 <span>{item.title}</span>

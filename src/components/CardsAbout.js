@@ -1,20 +1,12 @@
 "use client"
 
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
-import {animate, inView} from 'motion'
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import {useRef, useEffect, useState} from 'react'
-import { motion } from "motion/react"
+import {motion} from "motion/react"
 import {
     Code,
-    FileCode,
-    FileType,
-    FileType2,
-    FileJson,
-    Coffee,
-    Terminal,
     Binary,
     Database,
-    MonitorCog,
     DatabaseBackup,
     ServerCog,
     Server
@@ -182,7 +174,8 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
                                     key={item}
                                     className="flex items-center justify-between p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
                                 >
-                                    <span className="text-gray-900 dark:text-neutral-200 select-none">{lan(`languages.list.${item}.language`)}</span>
+                                    <span
+                                        className="text-gray-900 dark:text-neutral-200 select-none">{lan(`languages.list.${item}.language`)}</span>
                                     <span
                                         className="text-sm text-blue-500 dark:text-amber-500 select-none">{lan(`languages.list.${item}.level`)}</span>
                                 </div>

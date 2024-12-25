@@ -1,5 +1,5 @@
 "use client"
- import {Link} from "@/i18n/routing";
+import {Link} from "@/i18n/routing";
 import {Heart, Languages, Code, Camera, ChevronLeft, ChevronRight} from 'lucide-react'
 import {
     Breadcrumb,
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
                         <Link href="/"
-                           className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+                              className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
                             <ChevronLeft className="w-4 h-4"/>
                             <div>
                                 <div className="text-sm font-medium">{lan('pages-prev')}</div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                             </div>
                         </Link>
                         <Link href="/experience"
-                           className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
+                              className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
                             <div>
                                 <div className="text-sm font-medium">{lan('pages-next')}</div>
                                 <div className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
@@ -144,11 +144,11 @@ export default function AboutPage() {
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">
                 <h2 className="text-gray-500">
                     {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"
-                                         className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!
+                                                 className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!
                 </h2>
                 <h2 className="text-gray-500 text-center">
                     {lan('footer.paragraph2')}<a href="https://nextjs.org/" target="_blank"
-                                  className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">NextJS</a>{lan('footer.paragraph3')}<a
+                                                 className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">NextJS</a>{lan('footer.paragraph3')}<a
                     href="https://tailwindcss.com/" target="_blank"
                     className="font-bold text-blue-500 hover:text-blue-700  dark:text-amber-500 dark:hover:text-amber-700">TailwindCSS</a>.
                 </h2>

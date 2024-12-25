@@ -17,7 +17,7 @@ import {Skeleton} from "@/components/ui/skeleton";
 export function NavThemes({title, dark, light}) {
     const [mounted, setMounted] = useState(false)
     const {setTheme, theme} = useTheme()
-    const {state, isMobile} = useSidebar()
+    const {isMobile} = useSidebar()
 
     useEffect(() => {
         setMounted(true)

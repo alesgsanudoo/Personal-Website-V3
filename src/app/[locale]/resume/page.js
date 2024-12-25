@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import Resume from "../../../components/ResumeViewer";
+import Resume from "@/components/ResumeViewer";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {SidebarTrigger, useSidebar} from "@/components/ui/sidebar";
 import {cn} from "@/lib/utils";

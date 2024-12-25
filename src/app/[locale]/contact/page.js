@@ -1,13 +1,10 @@
 "use client"
 
 import {
-    Building, Calendar,
     ChevronLeft,
     ChevronRight,
-    ExternalLink, Linkedin,
     Loader2,
-    Mail, MapPin,
-    MessageSquare,
+    Mail,
     Phone,
     Send
 } from 'lucide-react'

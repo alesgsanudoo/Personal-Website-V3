@@ -5,7 +5,6 @@ import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/compon
 import {SidebarTrigger, useSidebar} from "@/components/ui/sidebar"
 import {cn} from "@/lib/utils"
 import {Separator} from "@/components/ui/separator"
-import {NotebookText} from "lucide-react"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -16,7 +15,7 @@ import {
 } from "@/components/ui/breadcrumb"
 import React from "react";
 import {motion} from "motion/react";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import Markdown from "markdown-to-jsx";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import {Link} from "@/i18n/routing";
@@ -111,10 +110,11 @@ export function BlogContent({postName, postDate, postContent, otherPosts}) {
                                         <Carousel>
                                             <CarouselContent className="-ml-1">
                                                 {otherPosts.map((post) => (
-                                                    <CarouselItem key={post.data.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                                                    <CarouselItem key={post.data.id}
+                                                                  className="pl-1 md:basis-1/2 lg:basis-1/3">
                                                         <div className="p-1">
                                                             <Card
-                                                                  className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
+                                                                className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
                                                                 <CardHeader>
                                                                     <CardTitle className="text-xl font-semibold">
                                                                         <Link href={`/blogs/${post.slug}`}

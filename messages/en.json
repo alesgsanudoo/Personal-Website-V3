@@ -85,21 +85,21 @@
     "inner-section-work-title": "Work Experience",
     "inner-section-edu-title": "Education",
     "workExperienceItems": {
-        "cs252": {
-          "title": "Teaching Assistant (CS252 - System Programming)",
-          "type": "Part-time",
-          "company": "Purdue University",
-          "date": "Jan 2025 - Present",
-          "location": "West Lafayette, IN",
-          "responsibilities-items": "3",
-          "responsibilities": {
-            "0": "Evaluate student projects and lab assignments in C, C++, and Shell Scripting.",
-            "1": "Provide support by addressing student questions and problems during office hours or online forums.",
-            "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
-          },
-          "technologies": "C,C++,Shell Scripting",
-          "link": "https://www.cs.purdue.edu/"
+      "cs252": {
+        "title": "Teaching Assistant (CS252 - System Programming)",
+        "type": "Part-time",
+        "company": "Purdue University",
+        "date": "Jan 2025 - Present",
+        "location": "West Lafayette, IN",
+        "responsibilities-items": "3",
+        "responsibilities": {
+          "0": "Evaluate student projects and lab assignments in C, C++, and Shell Scripting.",
+          "1": "Provide support by addressing student questions and problems during office hours or online forums.",
+          "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
         },
+        "technologies": "C,C++,Shell Scripting",
+        "link": "https://www.cs.purdue.edu/"
+      },
       "cs250": {
         "title": "Teaching Assistant (CS250 - Computer Architecture)",
         "type": "Part-time",
@@ -186,7 +186,7 @@
       "paragraph3": " and "
     }
   },
-  "ResumePage":{
+  "ResumePage": {
     "metadata": "Resume ⋅ Alejandro Griffith",
     "sidebar-option-close": "Close",
     "sidebar-option-open": "Open",

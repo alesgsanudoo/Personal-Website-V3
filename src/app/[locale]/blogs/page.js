@@ -1,6 +1,6 @@
 "use client"
 
-import {Book, ChevronLeft, ChevronRight} from 'lucide-react'
+import {ChevronLeft} from 'lucide-react'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -137,7 +137,7 @@ export default function BlogsPage() {
                                             <CardHeader>
                                                 <CardTitle className="text-xl font-semibold">
                                                     <Link href={`/blogs/${post.slug}`}
-                                                       className="hover:text-blue-500 dark:hover:text-amber-500 transition-colors">
+                                                          className="hover:text-blue-500 dark:hover:text-amber-500 transition-colors">
                                                         {post.title}
                                                     </Link>
                                                 </CardTitle>

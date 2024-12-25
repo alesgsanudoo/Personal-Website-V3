@@ -9,7 +9,7 @@ export default function handler(req, res) {
     const posts = filenames.map((filename) => {
         const filePath = path.join(postsDirectory, filename);
         const fileContents = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContents);
+        const {data, content} = matter(fileContents);
         return data;
     });
 
