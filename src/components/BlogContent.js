@@ -113,14 +113,15 @@ export function BlogContent({postName, postDate, postContent, otherPosts}) {
                                                     <CarouselItem key={post.data.id}
                                                                   className="pl-1 md:basis-1/2 lg:basis-1/3">
                                                         <div className="p-1">
+                                                            <Link href={`/blogs/${post.slug}`}>
                                                             <Card
-                                                                className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
+                                                                className="group bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
                                                                 <CardHeader>
                                                                     <CardTitle className="text-xl font-semibold">
-                                                                        <Link href={`/blogs/${post.slug}`}
-                                                                              className="hover:text-blue-500 dark:hover:text-amber-500 transition-colors">
+                                                                        <div
+                                                                              className="group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">
                                                                             {post.data.title}
-                                                                        </Link>
+                                                                        </div>
                                                                     </CardTitle>
                                                                 </CardHeader>
                                                                 <CardContent>
@@ -132,6 +133,7 @@ export function BlogContent({postName, postDate, postContent, otherPosts}) {
                                                                     <span>{post.data.readTime}</span>
                                                                 </CardFooter>
                                                             </Card>
+                                                        </Link>
                                                         </div>
                                                     </CarouselItem>
                                                 ))}

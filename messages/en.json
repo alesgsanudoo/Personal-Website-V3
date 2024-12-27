@@ -283,5 +283,16 @@
       "paragraph2": "Built with ",
       "paragraph3": " and "
     }
+  },
+  "ProjectPage": {
+    "metadata": "Projects ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-page": "Projects",
+    "section-title": "Featured Projects",
+    "section-description": "Some of the projects I've been working on lately that I'm excited about.",
+    "inner-section": "All Projects",
+    "inner-section-desc": "A comprehensive list of my projects."
   }
 }

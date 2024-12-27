@@ -6,7 +6,8 @@ import {
     Loader2,
     Mail,
     Phone,
-    Send
+    Send,
+    Linkedin,
 } from 'lucide-react'
 import {
     Breadcrumb,

@@ -67,7 +67,7 @@ export default function AboutPage() {
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
                     <section className="max-w-6xl mx-auto space-y-12">
                         {/* About Me Section */}
-                        <div className="bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg">
+                        <div className="space-y-2">
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 mb-6 select-none">
                                 {lan('section-title')}
                             </h1>

@@ -54,7 +54,8 @@ const programmingLanguages = [
     {name: "SQL", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlite.svg"},
     {name: "Python", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg"},
     {name: "Bash", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnubash.svg"},
-    {name: "Assembly", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/assemblyscript.svg"}
+    {name: "Assembly", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/assemblyscript.svg"},
+    {name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mongodb.svg"}
 ]
 
 const interest = {

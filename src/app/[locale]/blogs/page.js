@@ -33,7 +33,6 @@ export default function BlogsPage() {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            setLoading(true);
             try {
                 const res = await fetch(`/api/blogs?lan=${language}`);
                 const data = await res.json();
@@ -132,25 +131,27 @@ export default function BlogsPage() {
                             ) : (
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {blogs.map((post) => (
-                                        <Card key={post.id}
-                                              className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
-                                            <CardHeader>
-                                                <CardTitle className="text-xl font-semibold">
-                                                    <Link href={`/blogs/${post.slug}`}
-                                                          className="hover:text-blue-500 dark:hover:text-amber-500 transition-colors">
-                                                        {post.title}
-                                                    </Link>
-                                                </CardTitle>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <p className="text-gray-600 dark:text-gray-300 line-clamp-2">{post.excerpt}</p>
-                                            </CardContent>
-                                            <CardFooter
-                                                className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                                                <span>{post.date}</span>
-                                                <span>{post.readTime}</span>
-                                            </CardFooter>
-                                        </Card>
+                                        <Link href={`/blogs/${post.slug}`} key={post.id}>
+                                            <Card
+                                                  className="group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
+                                                <CardHeader>
+                                                    <CardTitle className="text-xl font-semibold">
+                                                        <div
+                                                            className="group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">
+                                                            {post.title}
+                                                        </div>
+                                                    </CardTitle>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <p className="text-gray-600 dark:text-gray-300 line-clamp-2">{post.excerpt}</p>
+                                                </CardContent>
+                                                <CardFooter
+                                                    className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                                                    <span>{post.date}</span>
+                                                    <span>{post.readTime}</span>
+                                                </CardFooter>
+                                            </Card>
+                                        </Link>
                                     ))}
                                 </div>
                             )}

@@ -9,6 +9,7 @@ import {routing} from '@/i18n/routing.ts';
 import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {notFound} from "next/navigation";
+import ScrollAndInfo from "@/components/ScrollAndInfo";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -51,7 +52,9 @@ export default async function LocaleLayout({children, params}) {
                 <SidebarProvider defaultOpen={defaultOpen}>
                     <AppSidebar lang={locale}/>
                     <SidebarInset>
-                        {children}<Toaster/>
+                        {children}
+                        <Toaster/>
+                        <ScrollAndInfo lan={locale}/>
                     </SidebarInset>
                 </SidebarProvider>
             </ThemeProvider>
