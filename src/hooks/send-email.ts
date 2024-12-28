@@ -2,6 +2,7 @@
 
 import {z} from 'zod'
 import {Resend} from 'resend'
+import {getLocale} from "next-intl/server";
 
 
 const schema = z.object({
@@ -12,6 +13,7 @@ const schema = z.object({
 })
 
 export async function sendEmail(formData: FormData) {
+    const locale = getLocale()
     try {
         const resend = new Resend(process.env.RESEND_API_KEY)
         const validatedFields = schema.parse({
@@ -61,15 +63,13 @@ export async function sendEmail(formData: FormData) {
       </body>
       </html>
     `
-
-        // HTML template for the auto-response
         const autoResponseHtml = `
       <!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thank You for Contacting Me</title>
+        <title>${locale === 'en' ? 'Thank You for Contacting Me' : 'Gracias por Contactarme'}</title>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
           h1 { color: #d97706; border-bottom: 2px solid #d97706; padding-bottom: 10px; }
@@ -78,13 +78,21 @@ export async function sendEmail(formData: FormData) {
         </style>
       </head>
       <body>
-        <h1>Thank You for Reaching Out!</h1>
+        <h1>${locale === 'en' ? 'Thank You for Reaching Out!' : '¡Gracias por Ponerte en Contacto!'}</h1>
         <div class="content">
-          <p>Dear ${validatedFields.name},</p>
-          <p>Thank you for contacting me through my portfolio website. I appreciate your interest and the time you've taken to reach out.</p>
-          <p>I have received your message regarding "${validatedFields.subject}" and will review it as soon as possible. You can expect to hear back from me within the next 24-48 hours.</p>
-          <p>If you have any urgent matters or additional information to share, please don't hesitate to reply to this email.</p>
-          <p>Once again, thank you for your message. I look forward to connecting with you soon!</p>
+            ${locale === 'en' ? `
+                <p>Hey ${validatedFields.name},</p>
+                <p>Thank you for contacting me. I really appreciate your interest and the time you've taken to reach out.</p>
+                <p>I have received your message regarding "${validatedFields.subject}" and will review it as soon as possible. You can expect to hear back from me within the next 24-48 hours.</p>
+                <p>If you have any urgent matters or additional information to share, please don't hesitate to reply to this email.</p>
+                <p>Once again, thank you for your message. I look forward to connecting with you soon!</p>
+                ` : `
+                <p>Hola ${validatedFields.name},</p>
+                <p>Gracias por contactarme. Realmente aprecio tu interés y el tiempo que has tomado para comunicarte conmigo.</p>
+                <p>He recibido tu mensaje sobre "${validatedFields.subject}" y lo revisaré lo antes posible. Puedes esperar una respuesta mía dentro de las próximas 24-48 horas.</p>
+                <p>Si tienes algún asunto urgente o información adicional para compartir, por favor no dudes en responder a este correo electrónico.</p>
+                <p>Una vez más, gracias por tu mensaje. ¡Espero poder conectarme contigo pronto!</p>
+            `}
         </div>
         <br><br>
         <table>
@@ -135,7 +143,7 @@ export async function sendEmail(formData: FormData) {
         await resend.emails.send({
             from: 'Alejandro Griffith <contact@alesgsanudoo.com>',
             to: validatedFields.email,
-            subject: 'Thank You for Contacting Me',
+            subject: locale === 'en' ? 'Thank You for Contacting Me' : '¡Gracias por Ponerte en Contacto!',
             html: autoResponseHtml,
         })
 
