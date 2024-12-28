@@ -64,7 +64,7 @@ const ScrollAndInfo = (lan) => {
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-64 text-sm" side="left" align="end">
-                            <p>{getInfoText()}</p>
+                            <p className="select-none">{getInfoText()}</p>
                         </PopoverContent>
                     </Popover>
                 </div>
@@ -85,7 +85,7 @@ const ScrollAndInfo = (lan) => {
                             </Button>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <p>{lan.lan === 'en' ? 'Scroll to top' : 'Scroll hacia arriba'}</p>
+                            <p className="select-none">{lan.lan === 'en' ? 'Scroll to top' : 'Scroll hacia arriba'}</p>
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>

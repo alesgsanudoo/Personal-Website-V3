@@ -45,7 +45,7 @@ export default function ExperiencePage() {
             <title>{lan('metadata')}</title>
             <header
                 className="sticky top-0 z-20 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b dark:border-neutral-800/50">
-                <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32">
+                <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32 select-none">
                     {!isMobile ? (
                         <TooltipProvider>
                             <Tooltip>
@@ -303,7 +303,7 @@ export default function ExperiencePage() {
                     </nav>
                 </div>
             </main>
-            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">
+            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center select-none">
                 <h2 className="text-gray-500">
                     {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"
                                                  className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!

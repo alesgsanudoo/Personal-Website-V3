@@ -45,7 +45,7 @@ export default async function postPage(props) {
             {/* Header */}
             <BlogContent postName={post.data.title} postDate={post.data.date} postContent={post.content}
                          otherPosts={otherPosts}></BlogContent>
-            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">
+            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center select-none">
                 <h2 className="text-gray-500">
                     {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"
                                                  className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!

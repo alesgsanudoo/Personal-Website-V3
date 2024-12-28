@@ -160,7 +160,7 @@ export function AppSidebar(props) {
       </pre>
                 </SidebarHeader>
             )}
-            <SidebarContent>
+            <SidebarContent className="select-none">
                 <NavMain items={data.navMain.map(item => ({
                     ...item,
                     isActive: isActive(item.url)

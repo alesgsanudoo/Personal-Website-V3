@@ -39,12 +39,12 @@ function SubmitButton({message, loading}) {
     return (
         <Button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 dark:bg-amber-500 dark:hover:bg-amber-600 text-white"
+            className={`w-full bg-blue-500 hover:bg-blue-600 dark:bg-amber-500 dark:hover:bg-amber-600 text-white ${pending ? 'cursor-wait' : ''}}`}
             disabled={pending}
         >
             {pending ? (
                 <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin"/>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin cursor-wait"/>
                     {loading}
                 </>
             ) : (
@@ -91,7 +91,7 @@ export default function ContactPage() {
             <title>{lan('metadata')}</title>
             <header
                 className="sticky top-0 z-20 flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b dark:border-neutral-800/50">
-                <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32">
+                <div className="flex items-center gap-2 px-4 md:px-8 lg:px-16 xl:px-32 select-none">
                     {!isMobile ? (
                         <TooltipProvider>
                             <Tooltip>
@@ -169,8 +169,8 @@ export default function ContactPage() {
                                     className="flex items-center gap-4 group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
                                     <Phone className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
                                     <div>
-                                        <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">{lan('phone')}</h3>
-                                        <p className="text-sm text-gray-500">+1 (765) 407-0468</p>
+                                        <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors select-none">{lan('phone')}</h3>
+                                        <p className="text-sm text-gray-500 select-all">+1 (765) 407-0468</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,9 +179,9 @@ export default function ContactPage() {
                             <Card
                                 className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
                                 <CardHeader>
-                                    <CardTitle className="text-2xl font-semibold">{lan('email-card.title')}</CardTitle>
+                                    <CardTitle className="text-2xl font-semibold select-none">{lan('email-card.title')}</CardTitle>
                                     <CardDescription
-                                        className="text-gray-500 dark:text-neutral-400">{lan('email-card.description')}</CardDescription>
+                                        className="text-gray-500 dark:text-neutral-400 select-none">{lan('email-card.description')}</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <form id="contact-form" action={handleSubmit} className="space-y-6">
@@ -269,7 +269,7 @@ export default function ContactPage() {
                     </nav>
                 </div>
             </main>
-            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center">
+            <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center select-none">
                 <h2 className="text-gray-500">
                     {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"
                                                  className="font-bold text-blue-500 hover:text-blue-700 dark:text-amber-500 dark:hover:text-amber-700">Alex</a> ❤️!

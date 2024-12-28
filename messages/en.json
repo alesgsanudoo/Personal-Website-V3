@@ -293,6 +293,15 @@
     "section-title": "Featured Projects",
     "section-description": "Some of the projects I've been working on lately that I'm excited about.",
     "inner-section": "All Projects",
-    "inner-section-desc": "A comprehensive list of my projects."
+    "inner-section-desc": "A comprehensive list of my projects.",
+    "pages-prev": "Previous Page",
+    "pages-prev-title": "Resume",
+    "pages-next": "Next Section",
+    "pages-next-title": "Me & Myself",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
   }
 }
