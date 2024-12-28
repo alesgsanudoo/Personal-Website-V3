@@ -294,10 +294,25 @@
     "section-description": "Some of the projects I've been working on lately that I'm excited about.",
     "inner-section": "All Projects",
     "inner-section-desc": "A comprehensive list of my projects.",
+    "projects": {
+      "1": "Newest version my personal website built with Next.js.",
+      "2": "A subscription management application with real-time updates.",
+      "4": "Real-time multiplayer social app with AI integration.",
+      "7": "A tool for Purdue CS students to plan their courses and meet graduation requirements.",
+      "learn-more": "Learn more",
+      "code": "Code",
+      "preview": "Preview"
+    },
+    "all-projects": {
+      "date": "Date",
+      "project": "Project",
+      "technologies": "Technologies",
+      "links": "Links"
+    },
     "pages-prev": "Previous Page",
-    "pages-prev-title": "Resume",
-    "pages-next": "Next Section",
-    "pages-next-title": "Me & Myself",
+    "pages-prev-title": "Experience",
+    "pages-next": "Next Page",
+    "pages-next-title": "Resume",
     "footer": {
       "paragraph1": "Made with love by ",
       "paragraph2": "Built with ",

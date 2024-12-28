@@ -283,5 +283,40 @@
       "paragraph2": "Construido con ",
       "paragraph3": " y "
     }
+  },
+  "ProjectPage": {
+    "metadata": "Proyectos ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "nav-bar-page": "Proyectos",
+    "section-title": "Proyectos Destacados",
+    "section-description": "Algunos de los proyectos en los que he estado trabajando últimamente y que me emocionan.",
+    "inner-section": "Todos los Proyectos",
+    "inner-section-desc": "Una lista completa de mis proyectos.",
+    "projects": {
+      "1": "La versión más reciente de mi sitio web personal construido con Next.js.",
+      "2": "Una aplicación de gestión de suscripciones con actualizaciones en tiempo real.",
+      "4": "Aplicación social multijugador en tiempo real con integración de IA.",
+      "7": "Una herramienta para que los estudiantes de CS de Purdue planifiquen sus cursos y cumplan con los requisitos de graduación.",
+      "learn-more": "Saber más",
+      "code": "Código",
+      "preview": "Vista previa"
+    },
+    "all-projects": {
+      "date": "Fecha",
+      "project": "Proyecto",
+      "technologies": "Tecnologías",
+      "links": "Enlaces"
+    },
+    "pages-prev": "Página Anterior",
+    "pages-prev-title": "Experiencia",
+    "pages-next": "Página Siguiente",
+    "pages-next-title": "Currículum",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
   }
 }
