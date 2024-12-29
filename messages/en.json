@@ -284,7 +284,7 @@
       "paragraph3": " and "
     }
   },
-  "ProjectPage": {
+  "ProjectsPage": {
     "metadata": "Projects ⋅ Alejandro Griffith",
     "sidebar-option-close": "Close",
     "sidebar-option-open": "Open",
@@ -313,6 +313,20 @@
     "pages-prev-title": "Experience",
     "pages-next": "Next Page",
     "pages-next-title": "Resume",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
+  "ProjectPage": {
+    "metadata": "Project ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "nav-bar-blogs": "Projects",
+    "code": "Code",
+    "preview": "Preview",
     "footer": {
       "paragraph1": "Made with love by ",
       "paragraph2": "Built with ",

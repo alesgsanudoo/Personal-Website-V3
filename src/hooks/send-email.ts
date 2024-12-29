@@ -13,7 +13,7 @@ const schema = z.object({
 })
 
 export async function sendEmail(formData: FormData) {
-    const locale = getLocale()
+    const locale =  await getLocale();
     try {
         const resend = new Resend(process.env.RESEND_API_KEY)
         const validatedFields = schema.parse({

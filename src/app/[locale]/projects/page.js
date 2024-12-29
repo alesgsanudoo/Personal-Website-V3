@@ -103,14 +103,13 @@ const listedProjects = [
 ]
 
 
-
-export default function ProjectPage() {
+export default function ProjectsPage() {
     const {
         state,
         isMobile,
     } = useSidebar()
     const isExpanded = state === "expanded";
-    const lan = useTranslations('ProjectPage')
+    const lan = useTranslations('ProjectsPage')
     const [isHovered, setIsHovered] = useState(false)
     const [isButtonHovered, setIsButtonHovered] = useState(false)
 
@@ -123,7 +122,6 @@ export default function ProjectPage() {
             technologies: ["Next.js", "TailwindCSS"],
             githubUrl: "https://github.com/alesgsanudoo/Personal-Website-V3",
             previewUrl: "https://www.alesgsanudoo.com",
-            url: "projects/personal-website-v3",
             isPinned: true
         },
         {
@@ -233,10 +231,10 @@ export default function ProjectPage() {
                                 {pinnedProjects.map((project) => (
                                     <Card
                                         key={project.id}
-                                        onClick={() => handleCardClick(project)}
+                                        onClick={() => project.url && handleCardClick(project)}
                                         onMouseEnter={handleCardMouseEnter}
                                         onMouseLeave={handleCardMouseLeave}
-                                        className={`group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md ${isHovered && !isButtonHovered ? 'hover:bg-gray-100/80 dark:hover:bg-neutral-900/50' : ''} transition-all border-gray-200 dark:border-neutral-800/50 select-none cursor-pointer`}>
+                                        className={`group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md ${isHovered && !isButtonHovered ? 'hover:bg-gray-100/80 dark:hover:bg-neutral-900/50' : ''} transition-all border-gray-200 dark:border-neutral-800/50 select-none ${project.url ? 'cursor-pointer' : 'cursor-default'}`}>
                                         <CardHeader className="relative">
                                             <div className="absolute top-4 right-4">
                                                 <Pin
@@ -289,12 +287,14 @@ export default function ProjectPage() {
                                                         </Button>
                                                     )}
                                                 </div>
-                                                <div
-                                                    className={`flex items-center text-sm  ${isHovered && !isButtonHovered ? 'group-hover:text-blue-500 dark:group-hover:text-amber-500' : ''} transition-colors`}>
-                                                    {lan('projects.learn-more')}
-                                                    <ExternalLink
-                                                        className={`w-4 h-4 ml-1 transform ${isHovered && !isButtonHovered ? 'group-hover:translate-x-1 transition-transform' : ''}`}/>
-                                                </div>
+                                                {project.url && (
+                                                    <div
+                                                        className={`flex items-center text-sm  ${isHovered && !isButtonHovered ? 'group-hover:text-blue-500 dark:group-hover:text-amber-500' : ''} transition-colors`}>
+                                                        {lan('projects.learn-more')}
+                                                        <ExternalLink
+                                                            className={`w-4 h-4 ml-1 transform ${isHovered && !isButtonHovered ? 'group-hover:translate-x-1 transition-transform' : ''}`}/>
+                                                    </div>
+                                                )}
                                             </div>
                                         </CardFooter>
                                     </Card>
@@ -394,7 +394,7 @@ export default function ProjectPage() {
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
                         <Link href="/experience"
                               className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
-                        <ChevronLeft className="w-4 h-4"/>
+                            <ChevronLeft className="w-4 h-4"/>
                             <div>
                                 <div className="text-sm font-medium">{lan('pages-prev')}</div>
                                 <div className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>

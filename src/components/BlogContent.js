@@ -28,7 +28,6 @@ export function BlogContent({postName, postDate, postContent, otherPosts}) {
     const isExpanded = state === "expanded"
     const lan = useTranslations('PostPage')
     const locale = useLocale()
-    console.log(locale)
     return (
         <>
             {/* Header */}
