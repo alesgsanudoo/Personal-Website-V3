@@ -133,7 +133,7 @@ export default function BlogsPage() {
                                     {blogs.map((post) => (
                                         <Link href={`/blogs/${post.slug}`} key={post.id}>
                                             <Card
-                                                  className="group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 cursor-pointer">
+                                                  className="group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 cursor-pointer transform hover:scale-105 hover:shadow-xl relative">
                                                 <CardHeader>
                                                     <CardTitle className="text-xl font-semibold">
                                                         <div

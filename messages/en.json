@@ -1,4 +1,38 @@
 {
+  "ExplorePage": {
+    "metadata": "Explore ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Close",
+    "sidebar-option-open": "Open",
+    "nav-bar-explore": "Explore",
+    "me": "Hey, I'm Alejandro!",
+    "major": "I am CS Student at ",
+    "pages-next": "Next Page",
+    "pages-next-title": "About Me",
+    "new-drops": {
+      "title": "New Drops",
+      "description1": "A subscription management application with real-time updates.",
+      "category1": "Productivity",
+      "description2": "Real-time multiplayer social app with AI integration.",
+      "category2": "Social App"
+    },
+    "thoughts": {
+      "title": "New thoughts",
+      "description": "New ideas are coming to me.",
+      "title1": "Founding ABCS at Purdue",
+      "description1": "When I first came to Purdue University, I never imagined that I would become a Teaching Assistant for one of my favorite classes. This journey led me to co-found the Association of Black Computer Scientists (ABCS), creating a space for Black students within the Computer Science department."
+    },
+    "projects": "Projects",
+    "project-description": "Explore my diverse projects.",
+    "view-projects":"View Projects",
+    "experience": "Experience",
+    "experience-description": "Dive into my journey.",
+    "view-experience": "View Experience",
+    "footer": {
+      "paragraph1": "Made with love by ",
+      "paragraph2": "Built with ",
+      "paragraph3": " and "
+    }
+  },
   "AppSidebar": {
     "explore": "Explore",
     "about-me": "About Me",

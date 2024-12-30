@@ -1,4 +1,38 @@
 {
+  "ExplorePage": {
+    "metadata": "Explorar ⋅ Alejandro Griffith",
+    "sidebar-option-close": "Cerrar",
+    "sidebar-option-open": "Abrir",
+    "nav-bar-explore": "Explorar",
+    "me": "¡Hola, soy Alejandro!",
+    "major": "Soy estudiante de Ciencias de la Computación en ",
+    "pages-next": "Página Siguiente",
+    "pages-next-title": "Sobre Mí",
+    "new-drops": {
+      "title": "Nuevas Creaciones",
+      "description1": "Una aplicación de gestión de suscripciones con actualizaciones en tiempo real.",
+      "category1": "Productividad",
+      "description2": "Aplicación social multijugador en tiempo real con integración de IA.",
+      "category2": "Aplicación Social"
+    },
+    "thoughts": {
+      "title": "Nuevas Ideas",
+      "description": "Nuevas ideas que están llegando a mi cabeza.",
+      "title1": "Fundación de ABCS en Purdue",
+      "description1": "Cuando llegué a la Universidad de Purdue, nunca imaginé que me convertiría en Asistente de Enseñanza de una de mis clases favoritas. Este camino me llevó a cofundar la Asociación de Científicos Computacionales Negros (ABCS), creando un espacio para los estudiantes negros dentro del departamento de Ciencias de la Computación."
+    },
+    "projects": "Proyectos",
+    "project-description": "Explora mis diversos proyectos.",
+    "view-projects": "Ver Proyectos",
+    "experience": "Experiencia",
+    "experience-description": "Descubre mi trayectoria.",
+    "view-experience": "Ver Experiencia",
+    "footer": {
+      "paragraph1": "Hecho con amor por ",
+      "paragraph2": "Construido con ",
+      "paragraph3": " y "
+    }
+  },
   "AppSidebar": {
     "explore": "Explorar",
     "about-me": "Sobre mí",

@@ -3,93 +3,185 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: hsl(0 0% 9%);
-    --foreground: #ededed;
-  }
+    :root {
+        --background: hsl(0 0% 9%);
+        --foreground: #ededed;
+    }
 }
 
 body {
-  color: var(--foreground);
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0;
-  }
-
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 
 ::-webkit-scrollbar-track {
-  background: #888;
-  border-radius: 10px;
+    background: #888;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-          to bottom,
-          rgb(255 251 235),
-          rgb(255, 136, 0));
-  border-radius: 5px;
+    background: linear-gradient(
+            to bottom,
+            rgb(255 251 235),
+            rgb(255, 136, 0));
+    border-radius: 5px;
 }
 
 
 .scrollbar-blog::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
+    width: 1px;
+    height: 1px;
 }
 
 .scrollbar-blog::-webkit-scrollbar-track {
-  background: #ffffff;
-  border-radius: 5px;
+    background: #ffffff;
+    border-radius: 5px;
 }
 
 .scrollbar-blog::-webkit-scrollbar-thumb {
-  height: 1px;
-  background: linear-gradient(
-          to bottom,
-          rgb(255 251 235),
-          rgb(245 158 11));
-  border-radius: 5px;
+    height: 1px;
+    background: linear-gradient(
+            to bottom,
+            rgb(255 251 235),
+            rgb(245 158 11));
+    border-radius: 5px;
 }
 
 @layer base {
-  :root {
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    :root {
+        --radius: 0.5rem;
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
 
-    --BreadcrumbItem-text: var(--foreground);
-  }
-  .dark {
-    --sidebar-background: var(--background);
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --BreadcrumbItem-text: var(--foreground);
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+        --BreadcrumbItem-text: var(--foreground);
+    }
+
+    .dark {
+        --sidebar-background: var(--background);
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --BreadcrumbItem-text: var(--foreground);
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
 }
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.stars::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background-image: radial-gradient(1px 1px at 25px 5px, white, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 50px 25px, white, rgba(255, 255, 255, 0)),
+    radial-gradient(1px 1px at 125px 20px, white, rgba(255, 255, 255, 0)),
+    radial-gradient(1.5px 1.5px at 50px 75px, white, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 15px 125px, white, rgba(255, 255, 255, 0)),
+    radial-gradient(2.5px 2.5px at 110px 80px, white, rgba(255, 255, 255, 0));
+    background-size: 200px 200px;
+    animation: stars 8s linear infinite;
+    transform: rotate(45deg);
+}
+
+
+@keyframes stars {
+    0% {
+        transform: rotate(45deg) translateY(0px);
+    }
+    100% {
+        transform: rotate(45deg) translateY(-200px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+
+.glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: glow 4s ease-in-out infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meteor {
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    transform: rotate(-45deg);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    animation: meteor 3s linear infinite;
+    pointer-events: none;
+}
+
+.meteor::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: -2px;
+    background: rgba(255, 255, 255, .7);
+    box-shadow: 0 0 15px 3px #fff;
+}
+
+@keyframes meteor {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(-45deg);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-1000px) translateY(1000px) rotate(-45deg);
+    }
+}
+
+

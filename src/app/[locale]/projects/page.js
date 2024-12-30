@@ -234,7 +234,7 @@ export default function ProjectsPage() {
                                         onClick={() => project.url && handleCardClick(project)}
                                         onMouseEnter={handleCardMouseEnter}
                                         onMouseLeave={handleCardMouseLeave}
-                                        className={`group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md ${isHovered && !isButtonHovered ? 'hover:bg-gray-100/80 dark:hover:bg-neutral-900/50' : ''} transition-all border-gray-200 dark:border-neutral-800/50 select-none ${project.url ? 'cursor-pointer' : 'cursor-default'}`}>
+                                        className={`group  bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md ${isHovered && !isButtonHovered ? 'hover:bg-gray-100/80 dark:hover:bg-neutral-900/50' : ''} transition-all border-gray-200 dark:border-neutral-800/50 select-none ${project.url ? 'cursor-pointer' : 'cursor-default'} transform hover:scale-105 hover:shadow-xl relative`}>
                                         <CardHeader className="relative">
                                             <div className="absolute top-4 right-4">
                                                 <Pin
