@@ -32,7 +32,7 @@ export function ProjectContent({projectName, technologies, github, preview, proj
     const lan = useTranslations('ProjectPage')
     const locale = useLocale()
     const [progress, setProgress] = useState(0)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         const timer = setTimeout(() => {

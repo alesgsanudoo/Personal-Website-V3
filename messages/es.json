@@ -230,6 +230,9 @@
     "pages-prev-title": "Proyectos",
     "pages-next": "Siguente Página",
     "pages-next-title": "Contáctame",
+    "loading-title": "Progreso de la Misión Espacial",
+    "loading": "Lanzando...",
+    "done": "¡Misión cumplida! Listo para el despegue!",
     "footer": {
       "paragraph1": "Hecho con amor por ",
       "paragraph2": "Construido con ",

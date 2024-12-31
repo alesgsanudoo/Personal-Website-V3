@@ -230,6 +230,9 @@
     "pages-prev-title": "Projects",
     "pages-next": "Next Page",
     "pages-next-title": "Contact Me",
+    "loading-title": "Space Mission Progress",
+    "loading": "Launching...",
+    "done": "Mission accomplished! Ready for takeoff!",
     "footer": {
       "paragraph1": "Made with love by ",
       "paragraph2": "Built with ",

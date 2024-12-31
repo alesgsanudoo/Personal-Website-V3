@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Resume from "@/components/ResumeViewer";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip";
 import {SidebarTrigger, useSidebar} from "@/components/ui/sidebar";
@@ -13,9 +13,11 @@ import {
     BreadcrumbList, BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import {ChevronLeft, ChevronRight, Rocket} from "lucide-react";
 import {useTranslations} from "next-intl";
 import {Link} from "@/i18n/routing";
+import {Progress} from "@/components/ui/progress";
+import "@/app/globals.css";
 
 export default function ResumePage() {
     const {
@@ -24,6 +26,30 @@ export default function ResumePage() {
     } = useSidebar()
     const isExpanded = state === "expanded";
     const lan = useTranslations('ResumePage')
+    const [progress, setProgress] = useState(0)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+        }, 5000)
+
+        return () => clearTimeout(timer)
+    }, [])
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setProgress((prevProgress) => {
+                if (prevProgress >= 100) {
+                    clearInterval(interval)
+                    return 100
+                }
+                return prevProgress + 1
+            })
+        }, 50)
+
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -65,30 +91,54 @@ export default function ResumePage() {
                 </div>
             </header>
             {/* Main Content */}
-            <main className="relative z-10 flex-1 overflow-y-auto">
-                <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
-                    <Resume/>
-                </div>
-                <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
-                    <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
-                        <Link href="/projects"
-                              className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
-                            <ChevronLeft className="w-4 h-4"/>
-                            <div>
-                                <div className="text-sm font-medium">{lan('pages-prev')}</div>
-                                <div className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>
+            <main className={`relative z-10 flex-1 overflow-y-auto ${isLoading && "flex items-center justify-center"}`}>
+                {isLoading ? (
+                    <div
+                        className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32 flex items-center justify-center">
+                        <div className={"stars"}></div>
+                        <div className="w-full max-w-md p-6 space-y-4">
+                            <div className="flex items-center justify-between">
+                                <h2 className="text-2xl font-semibold mb-2 dark:text-amber-500 text-blue-500">{lan('loading-title')}</h2>
+                                <Rocket
+                                    className={`w-6 h-6 text-black dark:text-white ${isLoading ? 'animate-bounce' : ''}`}/>
                             </div>
-                        </Link>
-                        <Link href="/contact"
-                              className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
-                            <div>
-                                <div className="text-sm font-medium">{lan('pages-next')}</div>
-                                <div className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
-                            </div>
-                            <ChevronRight className="w-4 h-4"/>
-                        </Link>
-                    </nav>
-                </div>
+                            <Progress value={progress} className="w-full"/>
+                            <p className="text-lg mt-5 text-black dark:text-white text-center animate-pulse">
+                                {isLoading
+                                    ? `${lan('loading')} ${progress}%`
+                                    : lan('done')}
+                            </p>
+                        </div>
+                    </div>
+                ) : (
+                    <>
+                        <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
+                            <Resume/>
+                        </div>
+                        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
+                            <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
+                                <Link href="/projects"
+                                      className="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+                                    <ChevronLeft className="w-4 h-4"/>
+                                    <div>
+                                        <div className="text-sm font-medium">{lan('pages-prev')}</div>
+                                        <div
+                                            className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>
+                                    </div>
+                                </Link>
+                                <Link href="/contact"
+                                      className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
+                                    <div>
+                                        <div className="text-sm font-medium">{lan('pages-next')}</div>
+                                        <div
+                                            className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4"/>
+                                </Link>
+                            </nav>
+                        </div>
+                    </>
+                )}
             </main>
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center select-none">
                 <h2 className="text-gray-500">
