@@ -152,7 +152,7 @@ export default function ExplorePage() {
                 </div>
             </header>
             {/* Main Content */}
-            <main className="relative z-10 flex-1 overflow-y-auto">
+            <main className="relative z-10 flex-1 overflow-y-auto flex flex-col items-center justify-center">
                 <div className="container flex-col py-8 px-4 md:px-8 lg:px-16 xl:px-32">
                     {isLoading ? (
                         <>
