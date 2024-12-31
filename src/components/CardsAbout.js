@@ -16,7 +16,7 @@ import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious}
 import {Skeleton} from "@/components/ui/skeleton"
 import {useTranslations} from "next-intl";
 
-const LoadingImage = ({src, alt, width, height, className}) => {
+const LoadingImage = ({src, alt, className}) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

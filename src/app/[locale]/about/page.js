@@ -12,10 +12,14 @@ import {
 import {Separator} from "@/components/ui/separator"
 import {SidebarTrigger, useSidebar} from "@/components/ui/sidebar"
 import Card from '@/components/CardsAbout'
+import {Card as Card2} from "@/components/ui/card";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip"
 import {cn} from "@/lib/utils"
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useTranslations} from "next-intl";
+import {Skeleton} from "@/components/ui/skeleton";
+import {CardContent, CardHeader} from "@/components/ui/card";
+import {Carousel, CarouselContent, CarouselItem} from "@/components/ui/carousel";
 
 export default function AboutPage() {
     const {
@@ -24,6 +28,11 @@ export default function AboutPage() {
     } = useSidebar()
     const isExpanded = state === "expanded";
     const lan = useTranslations('AboutPage')
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        setIsLoading(false)
+    }, [])
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -65,60 +74,184 @@ export default function AboutPage() {
             {/* Main Content */}
             <main className="relative z-10 flex-1 overflow-y-auto">
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
-                    <section className="max-w-6xl mx-auto space-y-12">
-                        {/* About Me Section */}
-                        <div className="space-y-2">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 mb-6 select-none">
-                                {lan('section-title')}
-                            </h1>
-                            <div className="space-y-4 text-neutral-300">
-                                <p className="dark:text-gray-200 text-black">
-                                    {lan('content.paragraph1')}
-                                </p>
-                                <p className="dark:text-gray-200 text-black">
-                                    {lan('content.paragraph2')}
-                                </p>
-                                <p className="dark:text-gray-200 text-black">
-                                    {lan('content.paragraph3')}
-                                </p>
-                                <p className="dark:text-gray-200 text-black">
-                                    {lan('content.paragraph4')}
-                                </p>
-                            </div>
-                        </div>
+                    {isLoading ? (
+                            <section className="max-w-6xl mx-auto space-y-12">
+                                <div className="space-y-4">
+                                    <Skeleton className="h-14 w-64 mb-6"/>
+                                    <div className="flex flex-col space-y-5">
+                                        <Skeleton className="h-20 w-full"/>
+                                        <Skeleton className="h-20 w-full"/>
+                                        <Skeleton className="h-8 w-full"/>
+                                        <Skeleton className="h-8 w-3/4"/>
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <Card2
+                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50 h-full">
+                                        <CardHeader>
+                                            <Skeleton
+                                                className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 mb-4"/>
+                                            <Skeleton className="h-7 w-48 mb-2"/>
+                                            <Skeleton className="h-5 w-full max-w-[280px]"/>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <div className="grid grid-cols-3 gap-4">
+                                                {[...Array(6)].map((_, index) => (
+                                                    <div
+                                                        key={index}
+                                                        className="flex flex-col items-center gap-2 p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
+                                                    >
+                                                        <Skeleton className="h-8 w-8 rounded-lg"/>
+                                                        <Skeleton className="h-3 w-12"/>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </CardContent>
+                                    </Card2>
+                                    <Card2
+                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50 h-full">
+                                        <CardHeader>
+                                            <Skeleton
+                                                className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 mb-4"/>
+                                            <Skeleton className="h-7 w-48 mb-2"/>
+                                            <Skeleton className="h-5 w-full max-w-[280px]"/>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <div className="space-y-4">
+                                                {[1, 2, 3].map((item) => (
+                                                    <div
+                                                        key={item}
+                                                        className="flex items-center justify-between p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
+                                                    >
+                                                        <Skeleton
+                                                            className="h-4 w-1/3 bg-gray-300 dark:bg-neutral-700 rounded"/>
+                                                        <Skeleton
+                                                            className="h-4 w-1/4 bg-gray-300 dark:bg-neutral-700 rounded"/>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </CardContent>
+                                    </Card2>
+                                    <div className="md:col-span-2">
+                                        <Card2
+                                            className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50 h-full">
+                                            <CardHeader>
+                                                <Skeleton
+                                                    className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 mb-4"/>
+                                                <Skeleton className="h-7 w-48 mb-2"/>
+                                                <Skeleton className="h-5 w-full max-w-[280px]"/>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4">
+                                                    {[...Array(12)].map((_, index) => (
+                                                        <div
+                                                            key={index}
+                                                            className="flex flex-col items-center gap-2 p-3 rounded-lg bg-gray-200/50 dark:bg-neutral-800/30"
+                                                        >
+                                                            <Skeleton className="h-8 w-8 rounded-lg"/>
+                                                            <Skeleton className="h-3 w-12"/>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </CardContent>
+                                        </Card2>
+                                    </div>
+                                    <div className="md:col-span-2">
+                                        <Card2
+                                            className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
+                                            <CardHeader>
+                                                <Skeleton
+                                                    className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 mb-4"/>
+                                                <Skeleton className="h-7 w-48 mb-2"/>
+                                                <Skeleton className="h-5 w-full max-w-[280px]"/>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <div className="space-y-2 items-center">
+                                                    <Carousel>
+                                                        <CarouselContent className="-ml-1">
+                                                            {[1, 2, 3, 4, 5].map((index) => (
+                                                                <CarouselItem key={index}
+                                                                              className="pl-1 md:basis-1/2 lg:basis-1/3">
+                                                                    <div className="p-1">
+                                                                        <Card2>
+                                                                            <CardContent
+                                                                                className="flex aspect-square items-center justify-center p-6">
+                                                                                <Skeleton
+                                                                                    className="w-full h-full rounded"/>
+                                                                            </CardContent>
+                                                                        </Card2>
+                                                                    </div>
+                                                                </CarouselItem>
+                                                            ))}
+                                                        </CarouselContent>
+                                                        <div className="flex justify-center gap-2 mt-4">
+                                                            <Skeleton className="h-3 w-3 rounded-xl mb-2"/>
+                                                            <Skeleton className="h-3 w-3 rounded-xl mb-2"/>
+                                                        </div>
+                                                    </Carousel>
+                                                </div>
+                                            </CardContent>
+                                        </Card2>
+                                    </div>
+                                </div>
+                            </section>
+                        ) :
+                        (
+                            <section className="max-w-6xl mx-auto space-y-12">
+                                {/* About Me Section */}
+                                <div className="space-y-2">
+                                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 mb-6 select-none">
+                                        {lan('section-title')}
+                                    </h1>
+                                    <div className="space-y-4 text-neutral-300">
+                                        <p className="dark:text-gray-200 text-black">
+                                            {lan('content.paragraph1')}
+                                        </p>
+                                        <p className="dark:text-gray-200 text-black">
+                                            {lan('content.paragraph2')}
+                                        </p>
+                                        <p className="dark:text-gray-200 text-black">
+                                            {lan('content.paragraph3')}
+                                        </p>
+                                        <p className="dark:text-gray-200 text-black">
+                                            {lan('content.paragraph4')}
+                                        </p>
+                                    </div>
+                                </div>
 
-                        {/* Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <Card
-                                icon={Heart}
-                                title={lan('interest.title')}
-                                description={lan('interest.description')}
-                                type="interests"
-                            />
-                            <Card
-                                icon={Languages}
-                                title={lan('languages.title')}
-                                description={lan('languages.description')}
-                                type="languages"
-                            />
-                            <div className="md:col-span-2">
-                                <Card
-                                    icon={Code}
-                                    title={lan('programming.title')}
-                                    description={lan('programming.description')}
-                                    type="programming"
-                                />
-                            </div>
-                            <div className="md:col-span-2">
-                                <Card
-                                    icon={Camera}
-                                    title={lan('photography.title')}
-                                    description={lan('photography.description')}
-                                    type="posts"
-                                />
-                            </div>
-                        </div>
-                    </section>
+                                {/* Cards Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <Card
+                                        icon={Heart}
+                                        title={lan('interest.title')}
+                                        description={lan('interest.description')}
+                                        type="interests"
+                                    />
+                                    <Card
+                                        icon={Languages}
+                                        title={lan('languages.title')}
+                                        description={lan('languages.description')}
+                                        type="languages"
+                                    />
+                                    <div className="md:col-span-2">
+                                        <Card
+                                            icon={Code}
+                                            title={lan('programming.title')}
+                                            description={lan('programming.description')}
+                                            type="programming"
+                                        />
+                                    </div>
+                                    <div className="md:col-span-2">
+                                        <Card
+                                            icon={Camera}
+                                            title={lan('photography.title')}
+                                            description={lan('photography.description')}
+                                            type="posts"
+                                        />
+                                    </div>
+                                </div>
+                            </section>
+                        )}
                 </div>
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">

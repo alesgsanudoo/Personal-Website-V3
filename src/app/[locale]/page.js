@@ -30,6 +30,7 @@ import Announcements from "@/components/announcements"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge"
 import {Skeleton} from "@/components/ui/skeleton";
+import {useTheme} from "next-themes";
 
 
 const programmingLanguages = [
@@ -85,12 +86,12 @@ export default function ExplorePage() {
     const isExpanded = state === "expanded"
     const lan = useTranslations('ExplorePage')
     const locale = useLocale();
-
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         setIsLoading(false)
     }, [])
+
 
     const newDrops = [
         {
@@ -278,7 +279,7 @@ export default function ExplorePage() {
                                     </span>
                                             <Link
                                                 href="https://www.purdue.edu"
-                                                className="dark:text-white text-black select-none underline decoration-2 underline-offset-4"
+                                                className="dark:text-white text-black select-none underline decoration-2 underline-offset-4 hover:underline-offset-8 hover:text-blue-500 hover:dark:text-amber-500"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
@@ -372,7 +373,7 @@ export default function ExplorePage() {
                                     >
                                         {lan('thoughts.title')}
                                     </h2>
-                                    <p className="mt-2 mb-5">
+                                    <p className="mt-2 mb-5 text-gray-500 dark:text-neutral-400">
                                         {lan('thoughts.description')}
                                     </p>
                                     <div className="flex flex-col space-y-4">
