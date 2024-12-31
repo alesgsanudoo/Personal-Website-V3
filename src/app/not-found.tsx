@@ -1,4 +1,4 @@
-import NotFoundLayout from "./NotFoundLayout";
+import NotFoundLayout from "@/components/NotFoundLayout";
 import {routing} from "@/i18n/routing";
 import {NotFoundPage} from "@/components/NotFoundPage";
 
