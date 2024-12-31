@@ -221,17 +221,17 @@ export default function ExplorePage() {
                                 <div className="flex flex-col space-y-5">
                                     <Skeleton className="h-9 w-48"/>
                                     <Skeleton className="h-5 w-full max-w-md"/>
-                                        <Card className="mt-10 overflow-hidden">
-                                            <CardHeader className="relative z-10">
-                                                <div className="flex gap-4 items-center">
-                                                    <Skeleton className="h-9 w-9 rounded-lg"/>
-                                                    <div className="space-y-2 flex-1">
-                                                        <Skeleton className="h-5 w-3/4"/>
-                                                        <Skeleton className="h-4 w-full"/>
-                                                    </div>
+                                    <Card className="mt-10 overflow-hidden">
+                                        <CardHeader className="relative z-10">
+                                            <div className="flex gap-4 items-center">
+                                                <Skeleton className="h-9 w-9 rounded-lg"/>
+                                                <div className="space-y-2 flex-1">
+                                                    <Skeleton className="h-5 w-3/4"/>
+                                                    <Skeleton className="h-4 w-full"/>
                                                 </div>
-                                            </CardHeader>
-                                        </Card>
+                                            </div>
+                                        </CardHeader>
+                                    </Card>
                                 </div>
                                 <div className="flex flex-col sm:flex-row gap-6">
                                     {[0, 1].map((index) => (
@@ -413,15 +413,18 @@ export default function ExplorePage() {
                                                             className="h-5 w-5 text-blue-500 dark:text-amber-500"/>
                                                     </div>
                                                     <div>
-                                                        <CardTitle className="group-hover:dark:text-amber-500 group-hover:text-blue-500">{lan('experience')}</CardTitle>
+                                                        <CardTitle
+                                                            className="group-hover:dark:text-amber-500 group-hover:text-blue-500">{lan('experience')}</CardTitle>
                                                         <CardDescription>{lan('experience-description')}</CardDescription>
                                                     </div>
                                                 </div>
                                             </CardHeader>
                                             <CardContent className="relative z-10">
-                                                <Button variant="link" className="px-0 group-hover:underline group-hover:underline-offset-8 group-hover:dark:text-amber-500">
+                                                <Button variant="link"
+                                                        className="px-0 group-hover:underline group-hover:underline-offset-8 group-hover:dark:text-amber-500">
                                                     {lan('view-experience')}
-                                                    <ArrowRight className="h-4 w-4 group-hover:text-blue-500 group-hover:dark:text-amber-500  group-hover:translate-x-1 transition-transform"/>
+                                                    <ArrowRight
+                                                        className="h-4 w-4 group-hover:text-blue-500 group-hover:dark:text-amber-500  group-hover:translate-x-1 transition-transform"/>
                                                 </Button>
                                             </CardContent>
                                         </Card>
@@ -438,15 +441,18 @@ export default function ExplorePage() {
                                                             className="h-5 w-5 text-blue-500 dark:text-amber-500"/>
                                                     </div>
                                                     <div>
-                                                        <CardTitle className="group-hover:dark:text-amber-500 group-hover:text-blue-500">{lan('projects')}</CardTitle>
+                                                        <CardTitle
+                                                            className="group-hover:dark:text-amber-500 group-hover:text-blue-500">{lan('projects')}</CardTitle>
                                                         <CardDescription>{lan('project-description')}</CardDescription>
                                                     </div>
                                                 </div>
                                             </CardHeader>
                                             <CardContent className="relative z-10">
-                                                <Button variant="link" className="px-0 group-hover:underline group-hover:underline-offset-8 group-hover:dark:text-amber-500">
+                                                <Button variant="link"
+                                                        className="px-0 group-hover:underline group-hover:underline-offset-8 group-hover:dark:text-amber-500">
                                                     {lan('view-projects')}
-                                                    <ArrowRight className="h-4 w-4 group-hover:text-blue-500 group-hover:dark:text-amber-500  group-hover:translate-x-1 transition-transform"/>
+                                                    <ArrowRight
+                                                        className="h-4 w-4 group-hover:text-blue-500 group-hover:dark:text-amber-500  group-hover:translate-x-1 transition-transform"/>
                                                 </Button>
                                             </CardContent>
                                         </Card>

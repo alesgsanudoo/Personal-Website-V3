@@ -24,9 +24,10 @@ import {
     BreadcrumbList, BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useTranslations} from "next-intl";
 import {Link} from '@/i18n/routing'
+import {Skeleton} from "@/components/ui/skeleton";
 
 export default function ExperiencePage() {
     const {
@@ -35,6 +36,11 @@ export default function ExperiencePage() {
     } = useSidebar()
     const isExpanded = state === "expanded";
     const lan = useTranslations('ExperiencePage')
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        setIsLoading(false)
+    }, [])
 
     const workExperienceItems = ['cs252', 'cs250', 'jl', 'developer']
     const educationItems = ['purdue', 'ab']
@@ -79,208 +85,308 @@ export default function ExperiencePage() {
             {/* Main Content */}
             <main className="relative z-10 flex-1 overflow-y-auto" suppressHydrationWarning>
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
-                    <div className="space-y-2 mb-8">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 select-none">
-                            {lan('section-title')}
-                        </h1>
-                        <p className="text-lg text-gray-500 dark:text-neutral-400 select-none max-w-2xl">
-                            {lan('section-description')}
-                        </p>
-                    </div>
-                    <motion.div
-                        initial={{opacity: 0, y: 10}}
-                        whileInView={{opacity: 1, y: 0}}
-                        viewport={{once: true, margin: "-15% 0px -15% 0px", amount: "some"}}
-                        transition={{duration: 1.2, ease: [0.2, 0.65, 0.3, 0.9]}}
-                        suppressHydrationWarning
-                    >
-                        {/* Work Experience */}
-                        <section className="space-y-6">
-                            <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
-                                <Briefcase className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
-                                {lan('inner-section-work-title')}
-                            </h2>
+                    {isLoading ? (
+                            <div className="max-w-6xl mx-auto space-y-12">
+                                <div className="space-y-2 mb-8">
+                                    <Skeleton className="h-14 w-64 mb-6"/>
+                                    <Skeleton className="h-6 w-2/3"/>
+                                </div>
+                                <section className="space-y-6 ">
+                                    <h2 className="flex items-center gap-2">
+                                        <Skeleton className="h-10 w-10 rounded-xl"/>
+                                        <Skeleton className="h-8 w-40"/>
+                                    </h2>
+                                    <Card
+                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50 h-full">
+                                        <CardHeader>
+                                            <div className="space-y-1">
+                                                <div className="flex items-start justify-between">
+                                                    <Skeleton className="h-6 w-40"/>
+                                                    <Skeleton className="h-6 w-20"/>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <Skeleton className="h-4 w-4"/>
+                                                    <Skeleton className="h-4 w-32"/>
+                                                </div>
+                                                <div className="flex items-center gap-4">
+                                                    <div className="flex items-center gap-1">
+                                                        <Skeleton className="h-4 w-4"/>
+                                                        <Skeleton className="h-4 w-24"/>
+                                                    </div>
+                                                    <div className="flex items-center gap-1">
+                                                        <Skeleton className="h-4 w-4"/>
+                                                        <Skeleton className="h-4 w-24"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <div className="flex flex-col space-y-2">
+                                                <Skeleton className="h-4 w-full"/>
+                                                <Skeleton className="h-4 w-full"/>
+                                                <Skeleton className="h-4 w-3/4"/>
+                                            </div>
+                                            <div className="flex gap-2 mt-4 flex-wrap">
+                                                <Skeleton className="h-6 w-16"/>
+                                                <Skeleton className="h-6 w-20"/>
+                                                <Skeleton className="h-6 w-24"/>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </section>
+                                <section className="space-y-6 ">
+                                    <h2 className="flex items-center gap-2">
+                                        <Skeleton className="h-10 w-10 rounded-xl"/>
+                                        <Skeleton className="h-8 w-40"/>
+                                    </h2>
+                                    <Card
+                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50 h-full">
+                                        <CardHeader>
+                                            <div className="space-y-1">
+                                                <div className="flex items-start justify-between">
+                                                    <Skeleton className="h-6 w-40"/>
+                                                    <Skeleton className="h-6 w-20"/>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <Skeleton className="h-4 w-4"/>
+                                                    <Skeleton className="h-4 w-32"/>
+                                                </div>
+                                                <div className="flex items-center gap-4">
+                                                    <div className="flex items-center gap-1">
+                                                        <Skeleton className="h-4 w-4"/>
+                                                        <Skeleton className="h-4 w-24"/>
+                                                    </div>
+                                                    <div className="flex items-center gap-1">
+                                                        <Skeleton className="h-4 w-4"/>
+                                                        <Skeleton className="h-4 w-24"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <div className="flex flex-col space-y-2">
+                                                <Skeleton className="h-4 w-full"/>
+                                                <Skeleton className="h-4 w-full"/>
+                                                <Skeleton className="h-4 w-3/4"/>
+                                            </div>
+                                            <div className="flex gap-2 mt-4 flex-wrap">
+                                                <Skeleton className="h-6 w-16"/>
+                                                <Skeleton className="h-6 w-20"/>
+                                                <Skeleton className="h-6 w-24"/>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </section>
+                            </div>
+                        )
+                        : (
+                            <>
+                                <div className="space-y-2 mb-8">
+                                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 select-none">
+                                        {lan('section-title')}
+                                    </h1>
+                                    <p className="text-lg text-gray-500 dark:text-neutral-400 select-none max-w-2xl">
+                                        {lan('section-description')}
+                                    </p>
+                                </div>
+                                <motion.div
+                                    initial={{opacity: 0, y: 10}}
+                                    whileInView={{opacity: 1, y: 0}}
+                                    viewport={{once: true, margin: "-15% 0px -15% 0px", amount: "some"}}
+                                    transition={{duration: 1.2, ease: [0.2, 0.65, 0.3, 0.9]}}
+                                    suppressHydrationWarning
+                                >
+                                    {/* Work Experience */}
+                                    <section className="space-y-6">
+                                        <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
+                                            <Briefcase className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
+                                            {lan('inner-section-work-title')}
+                                        </h2>
 
-                            <div className="relative">
-                                {/* Timeline Line */}
-                                <div className="absolute left-8 top-0 bottom-4 w-px bg-[#2C2C2C]"/>
+                                        <div className="relative">
+                                            {/* Timeline Line */}
+                                            <div className="absolute left-8 top-0 bottom-4 w-px bg-[#2C2C2C]"/>
 
-                                {/* Experience Items */}
-                                {workExperienceItems.map((experience) => (
-                                    <div key={experience} className="relative pl-16 pb-10">
-                                        {/* Timeline Dot */}
-                                        <div
-                                            className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
-                                        <Card
-                                            className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
-                                            <CardHeader>
-                                                <div className="space-y-1">
-                                                    <div className="flex items-start justify-between">
-                                                        <CardTitle className="flex items-center gap-2">
-                                                            <a href={lan(`workExperienceItems.${experience}.link`)}
-                                                               target="_blank"
-                                                               className="group flex items-center gap-2">
+                                            {/* Experience Items */}
+                                            {workExperienceItems.map((experience) => (
+                                                <div key={experience} className="relative pl-16 pb-10">
+                                                    {/* Timeline Dot */}
+                                                    <div
+                                                        className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
+                                                    <Card
+                                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
+                                                        <CardHeader>
+                                                            <div className="space-y-1">
+                                                                <div className="flex items-start justify-between">
+                                                                    <CardTitle className="flex items-center gap-2">
+                                                                        <a href={lan(`workExperienceItems.${experience}.link`)}
+                                                                           target="_blank"
+                                                                           className="group flex items-center gap-2">
                                                                 <span
                                                                     className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{lan(`workExperienceItems.${experience}.title`)}</span>
-                                                                {!isMobile && (
-                                                                    <ExternalLink
-                                                                        className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
-                                                                )}
-                                                            </a>
-                                                        </CardTitle>
-                                                        <Badge variant="secondary"
-                                                               className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
-                                                            {lan(`workExperienceItems.${experience}.type`)}
-                                                        </Badge>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-muted-foreground">
-                                                        <Building
-                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                        <span>{lan(`workExperienceItems.${experience}.company`)}</span>
-                                                    </div>
+                                                                            {!isMobile && (
+                                                                                <ExternalLink
+                                                                                    className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
+                                                                            )}
+                                                                        </a>
+                                                                    </CardTitle>
+                                                                    <Badge variant="secondary"
+                                                                           className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
+                                                                        {lan(`workExperienceItems.${experience}.type`)}
+                                                                    </Badge>
+                                                                </div>
+                                                                <div
+                                                                    className="flex items-center gap-2">
+                                                                    <Building
+                                                                        className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                    <span>{lan(`workExperienceItems.${experience}.company`)}</span>
+                                                                </div>
+                                                                <div
+                                                                    className="flex items-center gap-4 text-sm">
+                                                                    <div className="flex items-center gap-1">
+                                                                        <Calendar
+                                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                        <span>{lan(`workExperienceItems.${experience}.date`)}</span>
+                                                                    </div>
+                                                                    <div className="flex items-center gap-1">
+                                                                        <MapPin
+                                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                        <span>{lan(`workExperienceItems.${experience}.location`)}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </CardHeader>
+                                                        <CardContent>
+                                                            <ul className="list-disc list-inside space-y-2">
+                                                                {(() => {
+                                                                    const items = [];
+                                                                    const responsibilities = parseInt(lan(`workExperienceItems.${experience}.responsibilities-items`), 10) || 0
+                                                                    for (let i = 0; i < responsibilities; i++) {
+                                                                        items.push(
+                                                                            <li key={i}>{lan(`workExperienceItems.${experience}.responsibilities.${i}`)}</li>
+                                                                        );
+                                                                    }
+                                                                    return items;
+                                                                })()}
+                                                            </ul>
+                                                            <div className="flex gap-2 mt-4 flex-wrap">
+                                                                {lan(`workExperienceItems.${experience}.technologies`).split(",").map((tech, idx) => (
+                                                                    <Badge key={idx} variant="outline"
+                                                                           className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none">
+                                                                        {tech}
+                                                                    </Badge>
+                                                                ))}
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </section>
+
+
+                                    {/* Education */}
+                                    <section className="space-y-6 mt-10">
+                                        <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
+                                            <GraduationCap className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
+                                            {lan('inner-section-edu-title')}
+                                        </h2>
+
+                                        <div className="relative">
+                                            {/* Timeline Line */}
+                                            <div className="absolute left-8 top-0 bottom-0 w-px bg-[#2C2C2C]"/>
+
+                                            {/* Education Items */}
+                                            {educationItems.map((edu) => (
+                                                <div key={edu} className="relative pl-16 pb-10">
+                                                    {/* Timeline Dot */}
                                                     <div
-                                                        className="flex items-center gap-4 text-sm text-muted-foreground">
-                                                        <div className="flex items-center gap-1">
-                                                            <Calendar
-                                                                className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{lan(`workExperienceItems.${experience}.date`)}</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-1">
-                                                            <MapPin
-                                                                className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{lan(`workExperienceItems.${experience}.location`)}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                                                    {(() => {
-                                                        const items = [];
-                                                        const responsibilities = parseInt(lan(`workExperienceItems.${experience}.responsibilities-items`), 10) || 0
-                                                        for (let i = 0; i < responsibilities; i++) {
-                                                            items.push(
-                                                                <li key={i}>{lan(`workExperienceItems.${experience}.responsibilities.${i}`)}</li>
-                                                            );
-                                                        }
-                                                        return items;
-                                                    })()}
-                                                </ul>
-                                                <div className="flex gap-2 mt-4 flex-wrap">
-                                                    {lan(`workExperienceItems.${experience}.technologies`).split(",").map((tech, idx) => (
-                                                        <Badge key={idx} variant="outline"
-                                                               className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none">
-                                                            {tech}
-                                                        </Badge>
-                                                    ))}
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-
-                        {/* Education */}
-                        <section className="space-y-6 mt-10">
-                            <h2 className="text-2xl font-semibold text-gray-900 dark:text-neutral-200 select-none flex items-center gap-2">
-                                <GraduationCap className="h-6 w-6 dark:text-amber-500 text-blue-500"/>
-                                {lan('inner-section-edu-title')}
-                            </h2>
-
-                            <div className="relative">
-                                {/* Timeline Line */}
-                                <div className="absolute left-8 top-0 bottom-0 w-px bg-[#2C2C2C]"/>
-
-                                {/* Education Items */}
-                                {educationItems.map((edu) => (
-                                    <div key={edu} className="relative pl-16 pb-10">
-                                        {/* Timeline Dot */}
-                                        <div
-                                            className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
-                                        <Card
-                                            className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
-                                            <CardHeader>
-                                                <div className="space-y-1">
-                                                    <div className="flex items-start justify-between">
-                                                        {lan(`educationItems.${edu}.link`).trim() !== "" ? (
-                                                            <CardTitle className="flex items-center gap-2">
-                                                                <a href={lan(`educationItems.${edu}.link`)}
-                                                                   target="_blank"
-                                                                   className="group flex items-center gap-2">
+                                                        className="absolute left-[25px] w-4 h-4 rounded-full dark:bg-amber-500 bg-blue-500"/>
+                                                    <Card
+                                                        className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full">
+                                                        <CardHeader>
+                                                            <div className="space-y-1">
+                                                                <div className="flex items-start justify-between">
+                                                                    {lan(`educationItems.${edu}.link`).trim() !== "" ? (
+                                                                        <CardTitle className="flex items-center gap-2">
+                                                                            <a href={lan(`educationItems.${edu}.link`)}
+                                                                               target="_blank"
+                                                                               className="group flex items-center gap-2">
                                                                     <span
                                                                         className="text-xl font-semibold transition-colors group-hover:text-blue-500 dark:group-hover:text-amber-500">{lan(`educationItems.${edu}.degree`)}</span>
-                                                                    {!isMobile && (
-                                                                        <ExternalLink
-                                                                            className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
-                                                                    )}
-                                                                </a>
-                                                            </CardTitle>
-                                                        ) : (
-                                                            <CardTitle
-                                                                className="text-xl font-semibold">{lan(`educationItems.${edu}.degree`)}</CardTitle>
-                                                        )
-                                                        }
-                                                        <Badge variant="secondary"
-                                                               className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
-                                                            {lan(`educationItems.${edu}.type`)}
-                                                        </Badge>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-muted-foreground">
-                                                        <Building
-                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                        <span>{lan(`educationItems.${edu}.institution`)}</span>
-                                                    </div>
-                                                    <div
-                                                        className="flex items-center gap-4 text-sm text-muted-foreground">
-                                                        <div className="flex items-center gap-1">
-                                                            <Calendar
-                                                                className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{lan(`educationItems.${edu}.date`)}</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-1">
-                                                            <MapPin
-                                                                className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
-                                                            <span>{lan(`educationItems.${edu}.location`)}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </CardHeader>
-                                            <CardContent>
-                                                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                                                    {(() => {
-                                                        const items = [];
-                                                        const highlights = parseInt(lan(`educationItems.${edu}.highlights-items`), 10) || 0
-                                                        for (let i = 0; i < highlights; i++) {
-                                                            items.push(
-                                                                <li key={i}>{lan(`educationItems.${edu}.highlights.${i}`)}</li>
-                                                            );
-                                                        }
-                                                        return items;
-                                                    })()}
-                                                </ul>
+                                                                                {!isMobile && (
+                                                                                    <ExternalLink
+                                                                                        className="h-4 w-4 text-blue-500 dark:text-amber-500 transition-transform group-hover:translate-x-0.5"/>
+                                                                                )}
+                                                                            </a>
+                                                                        </CardTitle>
+                                                                    ) : (
+                                                                        <CardTitle
+                                                                            className="text-xl font-semibold">{lan(`educationItems.${edu}.degree`)}</CardTitle>
+                                                                    )
+                                                                    }
+                                                                    <Badge variant="secondary"
+                                                                           className="bg-blue-500 dark:bg-amber-500 dark:text-black dark:hover:text-white text-white hover:text-black select-none">
+                                                                        {lan(`educationItems.${edu}.type`)}
+                                                                    </Badge>
+                                                                </div>
+                                                                <div
+                                                                    className="flex items-center gap-2 text-muted-foreground">
+                                                                    <Building
+                                                                        className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                    <span>{lan(`educationItems.${edu}.institution`)}</span>
+                                                                </div>
+                                                                <div
+                                                                    className="flex items-center gap-4 text-sm text-muted-foreground">
+                                                                    <div className="flex items-center gap-1">
+                                                                        <Calendar
+                                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                        <span>{lan(`educationItems.${edu}.date`)}</span>
+                                                                    </div>
+                                                                    <div className="flex items-center gap-1">
+                                                                        <MapPin
+                                                                            className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
+                                                                        <span>{lan(`educationItems.${edu}.location`)}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </CardHeader>
+                                                        <CardContent>
+                                                            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                                                                {(() => {
+                                                                    const items = [];
+                                                                    const highlights = parseInt(lan(`educationItems.${edu}.highlights-items`), 10) || 0
+                                                                    for (let i = 0; i < highlights; i++) {
+                                                                        items.push(
+                                                                            <li key={i}>{lan(`educationItems.${edu}.highlights.${i}`)}</li>
+                                                                        );
+                                                                    }
+                                                                    return items;
+                                                                })()}
+                                                            </ul>
 
-                                                <div className="flex gap-2 mt-4 flex-wrap">
-                                                    {lan(`educationItems.${edu}.relevantCourses`).split(',').map((course) => (
-                                                        course.trim() !== "" ? (
-                                                            <Badge
-                                                                key={course}
-                                                                variant="outline"
-                                                                className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none"
-                                                            >
-                                                                {course.trim()}
-                                                            </Badge>
-                                                        ) : null
-                                                    ))}
+                                                            <div className="flex gap-2 mt-4 flex-wrap">
+                                                                {lan(`educationItems.${edu}.relevantCourses`).split(',').map((course) => (
+                                                                    course.trim() !== "" ? (
+                                                                        <Badge
+                                                                            key={course}
+                                                                            variant="outline"
+                                                                            className="border-blue-500 text-blue-500 dark:border-amber-500 dark:text-amber-500 hover:text-white hover:bg-blue-500 dark:hover:bg-amber-500 select-none"
+                                                                        >
+                                                                            {course.trim()}
+                                                                        </Badge>
+                                                                    ) : null
+                                                                ))}
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card>
                                                 </div>
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    </motion.div>
+                                            ))}
+                                        </div>
+                                    </section>
+                                </motion.div>
+                            </>
+                        )}
                 </div>
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
