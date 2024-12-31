@@ -288,7 +288,7 @@ export default function ProjectsPage() {
                                             {[...Array(5)].map((_, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex flex-col md:flex-row md:items-center px-4 py-3 hover:bg-muted/50 transition-colors"
+                                                    className="flex flex-col md:flex-row md:items-center px-4 py-3 transition-colors"
                                                 >
                                                     <div className="w-full md:w-[140px] text-sm">
                                                         <Skeleton className="h-4 w-24"/>
@@ -447,7 +447,7 @@ export default function ProjectsPage() {
                                                 {listedProjects.map((project) => (
                                                     <div
                                                         key={project.id}
-                                                        className="flex flex-col md:flex-row md:items-center px-4 py-3 hover:bg-muted/50 transition-colors"
+                                                        className="flex flex-col md:flex-row md:items-center px-4 py-3 transition-colors"
                                                     >
                                                         <div className="w-full md:w-[140px] text-sm">
                                                             {project.date}

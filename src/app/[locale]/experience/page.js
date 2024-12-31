@@ -331,13 +331,13 @@ export default function ExperiencePage() {
                                                                     </Badge>
                                                                 </div>
                                                                 <div
-                                                                    className="flex items-center gap-2 text-muted-foreground">
+                                                                    className="flex items-center gap-2">
                                                                     <Building
                                                                         className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
                                                                     <span>{lan(`educationItems.${edu}.institution`)}</span>
                                                                 </div>
                                                                 <div
-                                                                    className="flex items-center gap-4 text-sm text-muted-foreground">
+                                                                    className="flex items-center gap-4 text-sm">
                                                                     <div className="flex items-center gap-1">
                                                                         <Calendar
                                                                             className="h-4 w-4 dark:text-amber-500 text-blue-500"/>
@@ -352,7 +352,7 @@ export default function ExperiencePage() {
                                                             </div>
                                                         </CardHeader>
                                                         <CardContent>
-                                                            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                                                            <ul className="list-disc list-inside space-y-2">
                                                                 {(() => {
                                                                     const items = [];
                                                                     const highlights = parseInt(lan(`educationItems.${edu}.highlights-items`), 10) || 0
