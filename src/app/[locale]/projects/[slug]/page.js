@@ -40,11 +40,13 @@ export default async function ProjectPage(props) {
     const project = getProjectContent(slug, locale);
     const projects = getAllProjects(locale);
     const otherProjects = projects.filter((item) => item.slug !== slug)
+
     return (
         <div className="flex flex-col min-h-screen">
             {/* Header */}
-            <ProjectContent projectName={project.data.title} technologies={project.data.technologies} github={project.data.github} preview={project.data.preview} projectContent={project.content}
-                         otherProjects={otherProjects}></ProjectContent>
+            <ProjectContent projectName={project.data.title} technologies={project.data.technologies}
+                            github={project.data.github} preview={project.data.preview} projectContent={project.content}
+                            otherProjects={otherProjects}></ProjectContent>
             <footer className="flex mb-10 flex-col space-y-2 mt-5 pr-4 pl-4 items-center select-none">
                 <h2 className="text-gray-500">
                     {lan('footer.paragraph1')}<a href="https://github.com/alesgsanudoo" target="_blank"

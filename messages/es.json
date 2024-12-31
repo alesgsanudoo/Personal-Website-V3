@@ -362,6 +362,9 @@
     "code": "Código",
     "preview": "Vista previa",
     "learn-more": "Saber más",
+    "loading-title": "Progreso de la Misión Espacial",
+    "loading": "Lanzando...",
+    "done": "¡Misión cumplida! Listo para el despegue!",
     "footer": {
       "paragraph1": "Hecho con amor por ",
       "paragraph2": "Construido con ",

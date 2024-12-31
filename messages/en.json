@@ -361,6 +361,9 @@
     "nav-bar-blogs": "Projects",
     "code": "Code",
     "preview": "Preview",
+    "loading-title": "Space Mission Progress",
+    "loading": "Launching...",
+    "done": "Mission accomplished! Ready for takeoff!",
     "footer": {
       "paragraph1": "Made with love by ",
       "paragraph2": "Built with ",
