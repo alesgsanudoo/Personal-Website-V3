@@ -24,7 +24,7 @@ import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip"
 import {cn} from "@/lib/utils"
-import React from "react"
+import React, {useEffect, useState} from "react"
 import {useFormStatus} from "react-dom"
 import {sendEmail} from "@/hooks/send-email";
 import {useToast} from "@/hooks/use-toast";
@@ -32,6 +32,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {motion} from "motion/react"
 import {useTranslations} from "next-intl";
 import {Link} from "@/i18n/routing";
+import {Skeleton} from "@/components/ui/skeleton";
 
 function SubmitButton({message, loading}) {
     const {pending} = useFormStatus()
@@ -65,6 +66,11 @@ export default function ContactPage() {
     const isExpanded = state === "expanded";
     const {toast} = useToast()
     const lan = useTranslations('ContactPage')
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        setIsLoading(false)
+    }, [])
 
     async function handleSubmit(formData) {
         const result = await sendEmail(formData)
@@ -125,128 +131,180 @@ export default function ContactPage() {
             {/* Main Content */}
             <main className="relative z-10 flex-1 overflow-y-auto">
                 <div className="container mx-auto py-8 px-4 md:px-8 lg:px-16 xl:px-32">
-                    <section className="max-w-6xl mx-auto space-y-12">
-                        {/* Contact Header */}
-                        <div className="space-y-4">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 select-none">
-                                {lan('nav-bar-page')}
-                            </h1>
-                            <p className="text-lg text-gray-500 dark:text-neutral-400 select-none">
-                                {lan('section-description')}
-                            </p>
-                        </div>
-                        <motion.div
-                            initial={{opacity: 0, y: 10}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true, margin: "-15% 0px -15% 0px", amount: "some"}}
-                            transition={{duration: 1.2, ease: [0.2, 0.65, 0.3, 0.9]}}
-                            suppressHydrationWarning
-                        >
-                            {/* Contact Methods */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                                <a href="mailto:contact@alesgsanudoo.com" target="_blank"
-                                   className="group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
-                                    <div className="flex items-center gap-4">
-                                        <Mail className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
-                                        <div>
-                                            <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">Email</h3>
-                                            <p className="text-sm text-gray-500">contact@alesgsanudoo.com</p>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/alesgsanudoo/" target="_blank"
-                                   className="group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
-                                    <div className="flex items-center gap-4">
-                                        <Linkedin className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
-                                        <div>
-                                            <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">LinkedIn</h3>
-                                            <p className="text-sm text-gray-500">@alesgsanudoo</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div
-                                    className="flex items-center gap-4 group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
-                                    <Phone className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
-                                    <div>
-                                        <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors select-none">{lan('phone')}</h3>
-                                        <p className="text-sm text-gray-500 select-all">+1 (765) 407-0468</p>
-                                    </div>
-                                </div>
+                    {isLoading ? (
+                        <section className="max-w-6xl mx-auto space-y-12">
+                            <div className="space-y-2 mb-8">
+                                <Skeleton className="h-14 w-64 mb-6"/>
+                                <Skeleton className="h-6 w-2/3"/>
                             </div>
-
-                            {/* Contact Form */}
-                            <Card
-                                className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
-                                <CardHeader>
-                                    <CardTitle className="text-2xl font-semibold select-none">{lan('email-card.title')}</CardTitle>
-                                    <CardDescription
-                                        className="text-gray-500 dark:text-neutral-400 select-none">{lan('email-card.description')}</CardDescription>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                                {[...Array(3)].map((_, index) => (
+                                    <div
+                                        key={index}
+                                        className="bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20"
+                                    >
+                                        <div className="flex items-center gap-4">
+                                            <Skeleton className="h-6 w-6 rounded-full"/>
+                                            <div className="w-full">
+                                                <Skeleton className="h-5 w-24 mb-2"/>
+                                                <Skeleton className="h-4 w-32"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <Card className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md border-gray-200 dark:border-neutral-800/50">
+                                <CardHeader className="space-y-2">
+                                    <Skeleton className="h-10 w-64 mb-3"/>
+                                    <Skeleton className="h-6 w-2/3"/>
                                 </CardHeader>
                                 <CardContent>
-                                    <form id="contact-form" action={handleSubmit} className="space-y-6">
+                                    <div className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <div className="space-y-2">
-                                                <label htmlFor="name"
-                                                       className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                    {lan('email-card.name')}
-                                                </label>
-                                                <Input
-                                                    id="name"
-                                                    name="name"
-                                                    placeholder={lan('email-card.name-holder')}
-                                                    className="bg-white/50 dark:bg-black/50"
-                                                    required
-                                                />
-                                            </div>
-                                            <div className="space-y-2">
-                                                <label htmlFor="email"
-                                                       className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                    {lan('email-card.email')}
-                                                </label>
-                                                <Input
-                                                    id="email"
-                                                    name="email"
-                                                    type="email"
-                                                    placeholder={lan('email-card.email-holder')}
-                                                    className="bg-white/50 dark:bg-black/50"
-                                                    required
-                                                />
-                                            </div>
+                                            {[...Array(2)].map((_, index) => (
+                                                <div key={index} className="space-y-2">
+                                                    <Skeleton className="h-4 w-1/4" />
+                                                    <Skeleton className="h-10 w-full" />
+                                                </div>
+                                            ))}
                                         </div>
                                         <div className="space-y-2">
-                                            <label htmlFor="subject"
-                                                   className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                {lan('email-card.subject')}
-                                            </label>
-                                            <Input
-                                                id="subject"
-                                                name="subject"
-                                                placeholder={lan('email-card.subject-holder')}
-                                                className="bg-white/50 dark:bg-black/50"
-                                                required
-                                            />
+                                            <Skeleton className="h-4 w-1/4" />
+                                            <Skeleton className="h-10 w-full" />
                                         </div>
                                         <div className="space-y-2">
-                                            <label htmlFor="message"
-                                                   className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                {lan('email-card.message')}
-                                            </label>
-                                            <Textarea
-                                                id="message"
-                                                name="message"
-                                                placeholder={lan('email-card.message-holder')}
-                                                className="min-h-[150px] bg-white/50 dark:bg-black/50 relative z-[1]"
-                                                required
-                                            />
+                                            <Skeleton className="h-4 w-1/4" />
+                                            <Skeleton className="h-[150px] w-full" />
                                         </div>
-                                        <SubmitButton message={lan('email-card.button')}
-                                                      loading={lan('email-card.button-load')}/>
-                                    </form>
+                                        <Skeleton className="h-10 w-full" />
+                                    </div>
                                 </CardContent>
                             </Card>
-                        </motion.div>
-                    </section>
+                        </section>
+                    ) : (
+                        <section className="max-w-6xl mx-auto space-y-12">
+                            {/* Contact Header */}
+                            <div className="space-y-4">
+                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 dark:text-amber-500 select-none">
+                                    {lan('nav-bar-page')}
+                                </h1>
+                                <p className="text-lg text-gray-500 dark:text-neutral-400 select-none">
+                                    {lan('section-description')}
+                                </p>
+                            </div>
+                            <motion.div
+                                initial={{opacity: 0, y: 10}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true, margin: "-15% 0px -15% 0px", amount: "some"}}
+                                transition={{duration: 1.2, ease: [0.2, 0.65, 0.3, 0.9]}}
+                                suppressHydrationWarning
+                            >
+                                {/* Contact Methods */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                                    <a href="mailto:contact@alesgsanudoo.com" target="_blank"
+                                       className="group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
+                                        <div className="flex items-center gap-4">
+                                            <Mail className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
+                                            <div>
+                                                <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">Email</h3>
+                                                <p className="text-sm text-gray-500">contact@alesgsanudoo.com</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://www.linkedin.com/in/alesgsanudoo/" target="_blank"
+                                       className="group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
+                                        <div className="flex items-center gap-4">
+                                            <Linkedin className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
+                                            <div>
+                                                <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors">LinkedIn</h3>
+                                                <p className="text-sm text-gray-500">@alesgsanudoo</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div
+                                        className="flex items-center gap-4 group bg-gray-100/80 dark:bg-neutral-900/70 backdrop-blur-md p-6 rounded-lg border border-gray-200/20 hover:border-blue-500 dark:hover:border-amber-500 transition-colors">
+                                        <Phone className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
+                                        <div>
+                                            <h3 className="font-semibold dark:text-white text-black group-hover:text-blue-500 dark:group-hover:text-amber-500 transition-colors select-none">{lan('phone')}</h3>
+                                            <p className="text-sm text-gray-500 select-all">+1 (765) 407-0468</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Contact Form */}
+                                <Card
+                                    className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50">
+                                    <CardHeader>
+                                        <CardTitle
+                                            className="text-2xl font-semibold select-none">{lan('email-card.title')}</CardTitle>
+                                        <CardDescription
+                                            className="text-gray-500 dark:text-neutral-400 select-none">{lan('email-card.description')}</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <form id="contact-form" action={handleSubmit} className="space-y-6">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div className="space-y-2">
+                                                    <label htmlFor="name"
+                                                           className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                        {lan('email-card.name')}
+                                                    </label>
+                                                    <Input
+                                                        id="name"
+                                                        name="name"
+                                                        placeholder={lan('email-card.name-holder')}
+                                                        className="bg-white/50 dark:bg-black/50"
+                                                        required
+                                                    />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <label htmlFor="email"
+                                                           className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                        {lan('email-card.email')}
+                                                    </label>
+                                                    <Input
+                                                        id="email"
+                                                        name="email"
+                                                        type="email"
+                                                        placeholder={lan('email-card.email-holder')}
+                                                        className="bg-white/50 dark:bg-black/50"
+                                                        required
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label htmlFor="subject"
+                                                       className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                    {lan('email-card.subject')}
+                                                </label>
+                                                <Input
+                                                    id="subject"
+                                                    name="subject"
+                                                    placeholder={lan('email-card.subject-holder')}
+                                                    className="bg-white/50 dark:bg-black/50"
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label htmlFor="message"
+                                                       className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                    {lan('email-card.message')}
+                                                </label>
+                                                <Textarea
+                                                    id="message"
+                                                    name="message"
+                                                    placeholder={lan('email-card.message-holder')}
+                                                    className="min-h-[150px] bg-white/50 dark:bg-black/50 relative z-[1]"
+                                                    required
+                                                />
+                                            </div>
+                                            <SubmitButton message={lan('email-card.button')}
+                                                          loading={lan('email-card.button-load')}/>
+                                        </form>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        </section>)}
                 </div>
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
                     <nav className="flex justify-between items-center py-8 border-t border-neutral-800">
@@ -255,14 +313,16 @@ export default function ContactPage() {
                             <ChevronLeft className="w-4 h-4"/>
                             <div>
                                 <div className="text-sm font-medium">{lan('pages-prev')}</div>
-                                <div className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>
+                                <div
+                                    className="text-xl dark:text-white text-black">{lan('pages-prev-title')}</div>
                             </div>
                         </Link>
                         <Link href="/blogs"
                               className="flex items-center gap-2 text-right text-gray-500 hover:text-gray-300 transition-colors">
                             <div>
                                 <div className="text-sm font-medium">{lan('pages-next')}</div>
-                                <div className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
+                                <div
+                                    className="text-xl dark:text-white text-black">{lan('pages-next-title')}</div>
                             </div>
                             <ChevronRight className="w-4 h-4"/>
                         </Link>
