@@ -136,6 +136,11 @@ export function AppSidebar(props) {
                 const item = data.navMain[index]
                 router.push(item.url)
             }
+        } else {
+            if (key === '7') {
+                const item = data.resources.items[0]
+                router.push(item.url)
+            }
         }
     }, [router])
 
