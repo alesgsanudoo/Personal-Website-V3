@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38423fe6-137d-432a-bc1b-799cc0e8a5aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/websitev3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/en/abcs-event.md" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/en/abcs-event.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/es/abcs-event.md" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/es/abcs-event.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/about/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/blogs/[slug]/BlogContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/blogs/[slug]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/blogs/[slug]/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/blogs/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/blogs/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/contact/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/experience/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/experience/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/resume/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/resume/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav-main.js" afterDir="false" />
-    </list>
+    <list default="true" id="38423fe6-137d-432a-bc1b-799cc0e8a5aa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,10 +13,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
+        <option value="JSX File" />
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -67,45 +46,47 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.5.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.5.9&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alexmac/WebstormProjects/websitev3/src/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/alexmac/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "javascript.nodejs.core.library.configured.version": "20.5.0",
+    "javascript.nodejs.core.library.typings.version": "20.5.9",
+    "last_opened_file_path": "/Users/alexmac/WebstormProjects/websitev3/projects/es",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/alexmac/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/src/app/[locale]/blogs" />
-      <recent name="$PROJECT_DIR$/blogs/en" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/blogs" />
+      <recent name="$PROJECT_DIR$/projects/es" />
+      <recent name="$PROJECT_DIR$/projects/en" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/app/[locale]/projects/[slug]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/blogs/es" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -127,6 +108,7 @@
       <workItem from="1734581954154" duration="34738000" />
       <workItem from="1734900245412" duration="36683000" />
       <workItem from="1735005788100" duration="480000" />
+      <workItem from="1735006272692" duration="100804000" />
     </task>
     <servers />
   </component>
