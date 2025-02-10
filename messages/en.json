@@ -12,8 +12,8 @@
       "title": "New Drops",
       "description1": "A subscription management application with real-time updates.",
       "category1": "Productivity",
-      "description2": "Real-time multiplayer social app with AI integration.",
-      "category2": "Social App"
+      "description2": "Bash tool efficiently connecting to Purdue XINU servers with auto-blacklisting.",
+      "category2": "Tool"
     },
     "thoughts": {
       "title": "New thoughts",
@@ -332,7 +332,7 @@
     "inner-section": "All Projects",
     "inner-section-desc": "A comprehensive list of my projects.",
     "projects": {
-      "1": "Newest version my personal website built with Next.js.",
+      "1": "Bash tool efficiently connecting to Purdue XINU servers with auto-blacklisting.",
       "2": "A subscription management application with real-time updates.",
       "4": "Real-time multiplayer social app with AI integration.",
       "7": "A tool for Purdue CS students to plan their courses and meet graduation requirements.",

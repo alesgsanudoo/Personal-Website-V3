@@ -23,6 +23,15 @@ import {Skeleton} from "@/components/ui/skeleton";
 
 const listedProjects = [
     {
+        id: "15",
+        title: "Personal Website V3",
+        date: "December 2024",
+        technologies: ["Next.js", "TailwindCSS"],
+        githubUrl: "https://github.com/alesgsanudoo/Personal-Website-V3",
+        previewUrl: "https://www.alesgsanudoo.com",
+        isPinned: true
+    },
+    {
         id: "3",
         title: "Personal Website V2",
         date: "June 2024",
@@ -123,12 +132,12 @@ export default function ProjectsPage() {
     const pinnedProjects = [
         {
             id: "1",
-            title: "Personal Website V3",
+            title: "CS-Connect",
             description: lan('projects.1'),
-            date: "December 2024",
-            technologies: ["Next.js", "TailwindCSS"],
-            githubUrl: "https://github.com/alesgsanudoo/Personal-Website-V3",
-            previewUrl: "https://www.alesgsanudoo.com",
+            date: "Feb 2025",
+            technologies: ['Bash', 'Linux', 'awk', 'grep'],
+            githubUrl: "https://github.com/alesgsanudoo/CS-Connect",
+            url: "projects/cs-connect",
             isPinned: true
         },
         {

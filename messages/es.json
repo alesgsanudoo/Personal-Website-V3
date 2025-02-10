@@ -12,8 +12,8 @@
       "title": "Nuevas Creaciones",
       "description1": "Una aplicación de gestión de suscripciones con actualizaciones en tiempo real.",
       "category1": "Productividad",
-      "description2": "Aplicación social multijugador en tiempo real con integración de IA.",
-      "category2": "Aplicación Social"
+      "description2": "Herramienta Bash para conectar y auto-bloquear servidores XINU Purdue.",
+      "category2": "Herramienta"
     },
     "thoughts": {
       "title": "Nuevas Ideas",
@@ -332,7 +332,7 @@
     "inner-section": "Todos los Proyectos",
     "inner-section-desc": "Una lista completa de mis proyectos.",
     "projects": {
-      "1": "La versión más reciente de mi sitio web personal construido con Next.js.",
+      "1": "Herramienta Bash para conectar y auto-bloquear servidores XINU Purdue.",
       "2": "Una aplicación de gestión de suscripciones con actualizaciones en tiempo real.",
       "4": "Aplicación social multijugador en tiempo real con integración de IA.",
       "7": "Una herramienta para que los estudiantes de CS de Purdue planifiquen sus cursos y cumplan con los requisitos de graduación.",
