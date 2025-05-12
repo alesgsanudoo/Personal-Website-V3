@@ -7,7 +7,13 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'github.com',
                 port: '',
-            }]
+            },
+            {
+                protocol: 'https',
+                hostname: 'im.vsco.co',
+                port: '',
+            }
+            ]
     },
     webpack: (config) => {
         config.resolve.fallback = {

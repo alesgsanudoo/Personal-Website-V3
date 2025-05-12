@@ -1,7 +1,7 @@
 "use client"
 
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
-import {useRef, useEffect, useState} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import {motion} from "motion/react"
 import {
     Code,
@@ -9,12 +9,14 @@ import {
     Database,
     DatabaseBackup,
     ServerCog,
-    Server
+    Server, ExternalLink
 } from 'lucide-react'
 import Image from 'next/image'
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import {Skeleton} from "@/components/ui/skeleton"
 import {useTranslations} from "next-intl";
+import useFetchVscoPosts from "@/hooks/getFetchVscoPosts";
+import {Button} from "@/components/ui/button";
 
 const LoadingImage = ({src, alt, className}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -118,10 +120,13 @@ const posts = [
     },
 ]
 
+
 const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
     const cardRef = useRef(null)
     const lan = useTranslations('AboutPage');
     const languages = ['english', 'spanish', 'korean'];
+
+    const {posts, loading} = useFetchVscoPosts();
 
 
     return (
@@ -137,7 +142,34 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
                 className="bg-gray-50/80 dark:bg-neutral-900/30 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-neutral-900/50 transition-all border-gray-200 dark:border-neutral-800/50 h-full"
                 suppressHydrationWarning
             >
-                <CardHeader>
+                <CardHeader className={type === "posts" ? "flex-row  justify-between" : ""}>
+                    {type === "posts" ? (
+                        <>
+                        <div>
+                            <div
+                                className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 flex items-center justify-center mb-4">
+                                <Icon className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
+                            </div>
+                            <CardTitle
+                                className="text-xl font-semibold text-gray-900 dark:text-neutral-200  select-none">{title}</CardTitle>
+                            <CardDescription
+                                className="text-md text-gray-500 dark:text-neutral-400 select-none">{description}</CardDescription>
+
+                        </div>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className="transition-all hover:bg-blue-500/10 hover:text-blue-500 hover:border-blue-500 dark:hover:bg-amber-500/10 dark:hover:text-amber-500 dark:hover:border-amber-500"
+                            >
+                                <a href={"https://vsco.co/alesgsanudoo/"} target="_blank" rel="noopener noreferrer" className="flex items-center px-1">
+                                    <ExternalLink className="w-4 h-4 mr-2" />
+                                    {lan("vsco")}
+                                </a>
+                            </Button>
+                        </>
+
+                    ) :
+                    <>
                     <div
                         className="w-12 h-12 rounded-full bg-gray-200/80 dark:bg-neutral-800/50 flex items-center justify-center mb-4">
                         <Icon className="h-6 w-6 text-blue-500 dark:text-amber-500"/>
@@ -146,6 +178,9 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
                         className="text-xl font-semibold text-gray-900 dark:text-neutral-200  select-none">{title}</CardTitle>
                     <CardDescription
                         className="text-md text-gray-500 dark:text-neutral-400 select-none">{description}</CardDescription>
+
+                    </>
+                    }
                 </CardHeader>
                 {type === "programming" ? (
                     <CardContent>
@@ -205,24 +240,24 @@ const CardsAbout = ({title, description, icon: Icon, type = "default"},) => {
                         <div className="space-y-2 items-center">
                             <Carousel>
                                 <CarouselContent className="-ml-1">
-                                    {Object.entries(posts).map(([index, {imageUrl}]) => (
-                                        <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                                            <div className="p-1">
-                                                <Card>
-                                                    <CardContent
-                                                        className="flex aspect-square items-center justify-center p-6">
-                                                        <LoadingImage
-                                                            src={imageUrl}
-                                                            alt="post image"
-                                                            width={500}
-                                                            height={500}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    </CardContent>
-                                                </Card>
-                                            </div>
-                                        </CarouselItem>
-                                    ))}
+                                        {Object.entries(posts).map(([index, {imageUrl}]) => (
+                                            <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                                                <div className="p-1">
+                                                    <Card>
+                                                        <CardContent
+                                                            className="flex aspect-square items-center justify-center p-6">
+                                                            <LoadingImage
+                                                                src={imageUrl}
+                                                                alt="post image"
+                                                                width={500}
+                                                                height={500}
+                                                                className="w-full h-full object-cover"
+                                                            />
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+                                            </CarouselItem>
+                                        ))}
                                 </CarouselContent>
                                 <div className="flex justify-center gap-2 mt-4">
                                     <CarouselPrevious className="static translate-y-0"/>
