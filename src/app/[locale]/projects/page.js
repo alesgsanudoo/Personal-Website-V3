@@ -29,7 +29,7 @@ const listedProjects = [
         technologies: ["Next.js", "TailwindCSS"],
         githubUrl: "https://github.com/alesgsanudoo/Personal-Website-V3",
         previewUrl: "https://www.alesgsanudoo.com",
-        isPinned: true
+        isPinned: false
     },
     {
         id: "3",
@@ -46,6 +46,15 @@ const listedProjects = [
         date: "April 2024",
         description: "A custom shell implementation in C++.",
         technologies: ["C++", "Lex", "Yacc"],
+    },
+    {
+        id: "7",
+        title: "MyBetterCSPlan",
+        date: "November 2023",
+        technologies: ["React", "Node.js", "Express.js", "MongoDB", "CSS"],
+        githubUrl: "https://github.com/alesgsanudoo/bettercsplan",
+        previewUrl: "projects/mybettercsplan",
+        isPinned: false
     },
     {
         id: "6",
@@ -131,6 +140,17 @@ export default function ProjectsPage() {
 
     const pinnedProjects = [
         {
+            id: "7",
+            title: "EasyAccess",
+            date: "August 2025",
+            description: lan('projects.7'),
+            technologies: ["Electron", "Node.js", "Javascript", "MCP Agent", "Cloud Management"],
+            githubUrl: "https://github.com/alesgsanudoo/EasyAccess",
+            previewUrl: "http://easyaccess.dev/",
+            url: "projects/easyaccess",
+            isPinned: true
+        },
+        {
             id: "1",
             title: "CS-Connect",
             description: lan('projects.1'),
@@ -159,16 +179,6 @@ export default function ProjectsPage() {
             technologies: ["React Native", "Node.js", "CSS", "Cloud Firestore", "Socket", "OpenAI API"],
             githubUrl: "https://github.com/CSGrinders/SnapBattle",
             url: "projects/snapbattle",
-            isPinned: true
-        },
-        {
-            id: "7",
-            title: "MyBetterCSPlan",
-            date: "November 2023",
-            description: lan('projects.7'),
-            technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'CSS'],
-            githubUrl: "https://github.com/alesgsanudoo/bettercsplan",
-            url: "projects/mybettercsplan",
             isPinned: true
         },
     ]
