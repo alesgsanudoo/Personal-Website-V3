@@ -95,19 +95,19 @@ export default function ExplorePage() {
 
     const newDrops = [
         {
+            title: "EasyAcess",
+            description: lan('new-drops.description1'),
+            image: "https://raw.githubusercontent.com/alesgsanudoo/EasyAccess/refs/heads/main/assets/transfer-file.gif",
+            category: lan('easnew-drops.category1'),
+            link: "/projects/easyacess"
+        },
+        {
             title: "CS-Connect",
             description: lan('new-drops.description2'),
             image: "https://github.com/alesgsanudoo/alesgsanudoo/blob/main/images/gifs/cs-connect/cc-command.gif?raw=true",
             category: lan('new-drops.category2'),
             link: "/projects/cs-connect"
         },
-        {
-            title: "MySubs",
-            description: lan('new-drops.description1'),
-            image: "https://github.com/alesgsanudoo/alesgsanudoo/blob/main/images/portfio/projects/9jCNdUH%20-%20Imgur.png?raw=true",
-            category: lan('new-drops.category1'),
-            link: "/projects/mysubs"
-        }
     ]
 
     const thoughts = [
