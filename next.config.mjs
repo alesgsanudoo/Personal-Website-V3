@@ -12,6 +12,11 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'im.vsco.co',
                 port: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'raw.githubusercontent.com',
+                port: '',
             }
             ]
     },
