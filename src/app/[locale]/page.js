@@ -97,8 +97,8 @@ export default function ExplorePage() {
         {
             title: "EasyAcess",
             description: lan('new-drops.description1'),
-            image: "https://raw.githubusercontent.com/alesgsanudoo/EasyAccess/refs/heads/main/assets/transfer-file.gif",
-            category: lan('easnew-drops.category1'),
+            image: "https://raw.githubusercontent.com/alesgsanudoo/EasyAccess/refs/heads/main/assets/transfer-file.gif?4raw=true",
+            category: lan('new-drops.category1'),
             link: "/projects/easyacess"
         },
         {
