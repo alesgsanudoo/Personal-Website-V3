@@ -29,6 +29,9 @@ import {useTranslations} from "next-intl";
 import {Link} from '@/i18n/routing'
 import {Skeleton} from "@/components/ui/skeleton";
 
+const workExperienceItems = ['cs252', 'cs250', 'jl', 'developer']
+const educationItems = ['masters', 'purdue', 'ab']
+
 export default function ExperiencePage() {
     const {
         state,
@@ -41,9 +44,6 @@ export default function ExperiencePage() {
     useEffect(() => {
         setIsLoading(false)
     }, [])
-
-    const workExperienceItems = ['cs252', 'cs250', 'jl', 'developer']
-    const educationItems = ['purdue', 'ab']
 
     return (
         <div className="flex flex-col min-h-screen">

@@ -140,6 +140,27 @@ export default function ProjectsPage() {
 
     const pinnedProjects = [
         {
+            id: "16",
+            title: "TCP Expo",
+            date: "March 2026",
+            description: lan('projects.16'),
+            technologies: ["C", "Linux Kernel", "Bash", "Python", "Flent"],
+            githubUrl: "https://github.com/alesgsanudoo/TCP-EXPO",
+            url: "projects/tcp-expo",
+            isPinned: true
+        },
+        {
+            id: "17",
+            title: "Purdue Photography Club",
+            date: "Ongoing",
+            description: lan('projects.17'),
+            technologies: ["TypeScript", "Astro", "React", "Cloudflare Workers", "D1", "R2", "Discord"],
+            githubUrl: "https://github.com/PurduePhotographyClub",
+            previewUrl: "https://purduephotoclub.org/",
+            url: "projects/purdue-photography-club",
+            isPinned: true
+        },
+        {
             id: "7",
             title: "EasyAccess",
             date: "August 2025",

@@ -10,10 +10,10 @@
     "pages-next-title": "About Me",
     "new-drops": {
       "title": "New Drops",
-      "description1": "The Ultimate Unified File Management Platform with AI Assistant",
-      "category1": "Desktop Application",
-      "description2": "Bash tool efficiently connecting to Purdue XINU servers with auto-blacklisting.",
-      "category2": "Tool"
+      "description1": "Open-source projects and internal tools supporting the Purdue Photography Club community.",
+      "category1": "Photography Platform",
+      "description2": "A delay-based Linux kernel TCP congestion control algorithm for fair, low-latency network performance.",
+      "category2": "Networking"
     },
     "thoughts": {
       "title": "New thoughts",
@@ -121,34 +121,34 @@
     "inner-section-edu-title": "Education",
     "workExperienceItems": {
       "cs252": {
-        "title": "Teaching Assistant (CS252 - System Programming)",
+        "title": "Teaching Assistant (CS252 - Systems Programming)",
         "type": "Part-time",
-        "company": "Purdue University",
-        "date": "Jan 2025 - Present",
+        "company": "Purdue Computer Science",
+        "date": "August 2024 - May 2026",
         "location": "West Lafayette, IN",
         "responsibilities-items": "3",
         "responsibilities": {
-          "0": "Evaluate student projects and lab assignments in C, C++, and Shell Scripting.",
-          "1": "Provide support by addressing student questions and problems during office hours or online forums.",
-          "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
+          "0": "Evaluated student projects and lab assignments in C, C++, Shell Scripting, and Assembly.",
+          "1": "Provided support by addressing student questions and problems during office hours and online forums.",
+          "2": "Led lab sessions to help students with homework, exam preparation, and course-related questions."
         },
-        "technologies": "C,C++,Shell Scripting",
+        "technologies": "C,C++,Shell Scripting,Assembly",
         "link": "https://www.cs.purdue.edu/"
       },
       "cs250": {
         "title": "Teaching Assistant (CS250 - Computer Architecture)",
         "type": "Part-time",
-        "company": "Purdue University",
-        "date": "Aug 2024 - Dec 2024",
+        "company": "Purdue Computer Science",
+        "date": "August 2024 - May 2026",
         "location": "West Lafayette, IN",
         "responsibilities-items": "3",
         "responsibilities": {
-          "0": "Evaluate student projects and lab assignments in C, C++, and Assembly.",
-          "1": "Provide support by addressing student questions and problems during office hours or online forums.",
-          "2": "Conduct lab sessions to help students with homework, exam preparation, and course-related questions."
+          "0": "Evaluated student projects and lab assignments in C, C++, Shell Scripting, and Assembly.",
+          "1": "Provided support by addressing student questions and problems during office hours and online forums.",
+          "2": "Led lab sessions to help students with homework, exam preparation, and course-related questions."
         },
         "technologies": "C,C++,Assembly,Shell Scripting,Hardware Architecture,Circuits",
-        "link": "'https://www.cs.purdue.edu/"
+        "link": "https://www.cs.purdue.edu/"
       },
       "jl": {
         "title": "Customer Service Assistant",
@@ -161,37 +161,51 @@
           "0": "Received and redistributed donated items for resale: This role directly supports the center’s mission to help victims of domestic abuse."
         },
         "technologies": "Customer Service",
-        "link": "'https://www.juliancenter.org/thrifty-threads/"
+        "link": "https://www.juliancenter.org/thrifty-threads/"
       },
       "developer": {
-        "title": "Minecraft Server Developer",
-        "type": "Remote",
+        "title": "Minecraft Developer",
+        "type": "Self-employed",
         "company": "Self-Employed",
-        "date": "Aug 2016 - Sep 2020",
-        "location": "Jerez de la Frontera, ES",
+        "date": "August 2016 - September 2020",
+        "location": "Jerez de la Frontera, Spain",
         "responsibilities-items": "2",
         "responsibilities": {
-          "0": "Game Developer: Designed and developed game add-ons in Java, enhancing the gaming experience for hundreds of online players around the world. This role involved creating engaging content for Minecraft games, successfully generated revenue.",
-          "1": "Server Owner: Owned and managed servers using shell scripting and Java that hosted over 10,000 registered users."
+          "0": "Designed and developed game add-ons in Java and Bash, enhancing the gaming experience for hundreds of online players and generating revenue.",
+          "1": "Owned and managed servers using Bash and Java that hosted more than 10,000 registered users."
         },
-        "technologies": "MySQl,CSS,HTML,MariaDB,Product Development,Java,Shell Scripting",
-        "link": "minecraft.net"
+        "technologies": "Java,Bash,Server Management",
+        "link": "https://www.minecraft.net/"
       }
     },
     "educationItems": {
+      "masters": {
+        "degree": "Master of Science in Computer Science, concentration in Networking",
+        "type": "Graduate",
+        "institution": "Purdue University",
+        "date": "August 2026 - May 2028",
+        "location": "West Lafayette, IN",
+        "highlights-items": "1",
+        "highlights": {
+          "0": "Researching XR with a focus on networking, feedback, and low-latency improvements."
+        },
+        "relevantCourses": "",
+        "link": "https://www.cs.purdue.edu/"
+      },
       "purdue": {
         "degree": "Bachelor of Science in Computer Science",
         "type": "Undergraduate",
         "institution": "Purdue University",
         "date": "August 2022 - May 2026",
         "location": "West Lafayette, IN",
-        "highlights-items": "5",
+        "highlights-items": "6",
         "highlights": {
-          "0": "GPA: 3.66/4.0",
-          "1": "Dean's List & Semester Honors: Fall 2022, Spring 2023, Fall 2023, Spring 2024, and Fall 2024.",
-          "2": "Awards: 2x Purdue Black Caucus of Faculty & Staff Service Award.",
-          "3": "Activities and societies: Badminton Club and Computer Society.",
-          "4": "Current Vice-President of the Association of Black Computer Scientists."
+          "0": "GPA: 3.68/4.0",
+          "1": "Dean's List (8x) & Semester Honors (7x), including Fall 2022, Spring 2023, Fall 2023, Spring 2024, and Fall 2024.",
+          "2": "ACM Undergraduate Teaching Assistant Award.",
+          "3": "Awards: 2x Purdue Black Caucus of Faculty & Staff Service Award.",
+          "4": "Activities and societies: Badminton Club and Computer Society.",
+          "5": "Current Vice-President of the Association of Black Computer Scientists."
         },
         "relevantCourses": "Competitive Programming I,Computer Architecture,Data Structures and Algorithms,Foundations of Computer Science,Problem Solving And Object-Oriented Programming,Programming in C,Software Engineering I,Systems Programming,Computer Security,Information Systems,Introduction to the Analysis of Algorithms",
         "link": "https://www.cs.purdue.edu/"
@@ -337,6 +351,8 @@
       "2": "A subscription management application with real-time updates.",
       "4": "Real-time multiplayer social app with AI integration.",
       "7": "The Ultimate Unified File Management Platform with AI Assistant.",
+      "16": "A custom Linux kernel TCP congestion control algorithm using delay-based feedback.",
+      "17": "Open-source platform and internal tools powering Purdue Photography Club’s website, Discord, email, and events.",
       "learn-more": "Learn more",
       "code": "Code",
       "preview": "Preview"

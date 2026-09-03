@@ -95,18 +95,18 @@ export default function ExplorePage() {
 
     const newDrops = [
         {
-            title: "EasyAcess",
+            title: "Purdue Photography Club",
             description: lan('new-drops.description1'),
-            image: "https://raw.githubusercontent.com/alesgsanudoo/EasyAccess/refs/heads/main/assets/transfer-file.gif?raw=true",
+            image: "https://github.com/PurduePhotographyClub.png?size=512",
             category: lan('new-drops.category1'),
-            link: "/projects/easyaccess"
+            link: "/projects/purdue-photography-club"
         },
         {
-            title: "CS-Connect",
+            title: "TCP Expo",
             description: lan('new-drops.description2'),
-            image: "https://github.com/alesgsanudoo/alesgsanudoo/blob/main/images/gifs/cs-connect/cc-command.gif?raw=true",
+            image: "https://raw.githubusercontent.com/alesgsanudoo/TCP-EXPO/main/plots60s/expo/8tcp/throughput.png",
             category: lan('new-drops.category2'),
-            link: "/projects/cs-connect"
+            link: "/projects/tcp-expo"
         },
     ]
 

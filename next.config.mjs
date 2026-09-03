@@ -27,6 +27,13 @@ const nextConfig = {
         }
         return config
     },
+    experimental: {
+        turbo: {
+            resolveAlias: {
+                canvas: './src/lib/canvas-shim.js',
+            },
+        },
+    },
 };
 
 
